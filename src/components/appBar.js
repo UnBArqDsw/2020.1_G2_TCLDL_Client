@@ -1,6 +1,7 @@
 import React from 'react';
 
 import useStyles from '../styles/components/appBar.module'
+import Link from 'next/link'
 
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
@@ -130,8 +131,12 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button>SIGN IN</Button>
-            <Button variant="contained">SIGN UP</Button>
+            <Link href="/login">
+              <Button>SIGN IN</Button>
+            </Link>
+            <Link href="/create-account">
+              <Button variant="contained">SIGN UP</Button>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
