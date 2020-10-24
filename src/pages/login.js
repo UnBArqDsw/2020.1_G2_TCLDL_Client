@@ -1,37 +1,26 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import AppBar from '../components/AppBar'
 
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+import useStyles from '../styles/CreateAccount.module';
+
+import AppBar from '../components/AppBar'
+import SignComponent from '../components/Sign'
 export default function Home() {
+  const styles = useStyles();
+
   return (
     <div>
       <AppBar />
-      <div className={styles.container}>
-        <Head>
-          <title>Login Page</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <SignComponent>
+        <form className={styles.form} noValidate autoComplete="off">
+          <TextField className={styles.field} id="filled-basic" label="Email" variant="outlined" />
+          <TextField className={styles.field} id="outlined-basic" label="Password" variant="outlined" />
 
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to
-            {' '}
-            <a href="https://nextjs.org">Login Page</a>
-          </h1>
-        </main>
-
-        <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by
-            {' '}
-            <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-          </a>
-        </footer>
-      </div>
+          <Button className={styles.button} variant="contained">sign in</Button>
+        </form>
+      </SignComponent>
     </div>
   );
 }
