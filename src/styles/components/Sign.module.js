@@ -13,10 +13,16 @@ export default makeStyles((theme) => ({
     margin: 20
   },
   box: {
-    padding: 20,
+    padding: 10,
+    paddingLeft: 100,
+    paddingRight: 100,
     marginTop: 20,
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    flexDirection: 'column',
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
   },
   icon: {
     alignSelf: 'center',
