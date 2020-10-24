@@ -30,7 +30,7 @@ export default function SignComponent({ children }) {
         <p>TCLDL is a website that reinforces the role played by computing power in terms of models' performance improvements.</p>
       </div>
       <div className={classes.content}>
-        <Paper className={classes.box}>
+        <Paper elevation={3} className={classes.box}>
           <img src="/mainIconBlack.png" className={classes.icon} alt="logo" />
           {children}
         </Paper>
