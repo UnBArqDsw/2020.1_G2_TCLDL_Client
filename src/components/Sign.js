@@ -19,12 +19,21 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
-export default function PrimarySearchAppBar() {
+export default function SignComponent() {
   const classes = useStyles();
 
   return (
-    <div className={classes.grow}>
-      
+    <div className={classes.container}>
+      <div className={classes.content}>
+        <h1>The Computional Limits of Deep Learning</h1>
+        <p>You want to understand the behavior of Deep Learning models in terms of scalability or other Deep Learning issues?  The TCLDL can help you.</p>
+        <p>TCLDL is a website that reinforces the role played by computing power in terms of models' performance improvements.</p>
+      </div>
+      <div className={classes.content}>
+        <Paper className={classes.box}>
+          <img src="/mainIconBlack.png" className={classes.icon} alt="logo" />
+        </Paper>
+      </div>
     </div>
   );
 }
