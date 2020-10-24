@@ -103,19 +103,9 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
-          </Typography>
+          <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -129,13 +119,12 @@ export default function PrimarySearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Link href="/login">
-              <Button>SIGN IN</Button>
+              <Button className={classes.signIn}>SIGN IN</Button>
             </Link>
             <Link href="/create-account">
-              <Button variant="contained">SIGN UP</Button>
+              <Button className={classes.signUp} variant="contained">SIGN UP</Button>
             </Link>
           </div>
         </Toolbar>

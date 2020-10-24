@@ -28,6 +28,15 @@ export default makeStyles((theme) => ({
       width: 'auto',
     },
   },
+  appBar: {
+    backgroundColor: '#312e36'
+  },
+  signIn: {
+    color: '#ffffff'
+  },
+  signUp: {
+    backgroundColor: '#ffffff'
+  },
   searchIcon: {
     padding: theme.spacing(0, 2),
     height: '100%',
