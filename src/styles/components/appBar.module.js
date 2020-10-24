@@ -28,6 +28,10 @@ export default makeStyles((theme) => ({
       width: 'auto',
     },
   },
+  mainIcon: {
+    width: 60,
+    height: 'auto'
+  },
   appBar: {
     backgroundColor: '#312e36'
   },

@@ -105,6 +105,7 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
+          <img src="/mainIcon.png" className={classes.mainIcon} alt="logo" />
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
