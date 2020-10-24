@@ -29,7 +29,7 @@ export default makeStyles((theme) => ({
     },
   },
   mainIcon: {
-    width: 60,
+    width: 70,
     height: 'auto'
   },
   appBar: {
