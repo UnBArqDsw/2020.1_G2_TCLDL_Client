@@ -19,7 +19,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
-export default function SignComponent() {
+export default function SignComponent({ children }) {
   const classes = useStyles();
 
   return (
@@ -32,6 +32,7 @@ export default function SignComponent() {
       <div className={classes.content}>
         <Paper className={classes.box}>
           <img src="/mainIconBlack.png" className={classes.icon} alt="logo" />
+          {children}
         </Paper>
       </div>
     </div>
