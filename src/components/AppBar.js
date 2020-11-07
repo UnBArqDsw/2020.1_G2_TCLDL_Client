@@ -127,6 +127,9 @@ export default function PrimarySearchAppBar() {
             <Link href="/create-account">
               <Button className={classes.signUp} variant="contained">SIGN UP</Button>
             </Link>
+            <Link href="/submit-paper">
+              <Button className={classes.signUp} variant="contained">SUBMIT PAPER</Button>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
