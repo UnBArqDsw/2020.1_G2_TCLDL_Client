@@ -124,20 +124,20 @@ const PrimarySearchAppBar = ({ user }) => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          {user ?
-            (<div className={classes.sectionDesktop}>
+          
+            <div className={classes.sectionDesktop}>
               <Link href="/submit-paper">
                 <Button className={classes.signUp} variant="contained">SUBMIT PAPER</Button>
               </Link>
-            </div>) :
-            (<div className={classes.sectionDesktop}>
+            </div>
+            <div className={classes.sectionDesktop}>
               <Link href="/login">
                 <Button className={classes.signIn}>SIGN IN</Button>
               </Link>
               <Link href="/create-account">
                 <Button className={classes.signUp} variant="contained">SIGN UP</Button>
               </Link>
-            </div>)}
+            </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
@@ -152,5 +152,5 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(userAction, dispatch);
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(PrimarySearchAppBar);
