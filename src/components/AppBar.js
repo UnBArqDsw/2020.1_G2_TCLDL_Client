@@ -150,5 +150,7 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-
-export default connect(mapStateToProps, null)(PrimarySearchAppBar);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(userAction, dispatch);
+  
+export default connect(mapStateToProps, mapDispatchToProps)(PrimarySearchAppBar);

@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as userAction } from '../store/reducer';
 
-const Home = () => {
+const Home = ({ user, action }) => {
   const styles = useStyles();
 
   return (
@@ -24,14 +24,20 @@ const Home = () => {
           <TextField className={styles.field} id="filled-basic" label="Email" variant="outlined" />
           <TextField className={styles.field} id="outlined-basic" label="Password" variant="outlined" />
 
-          <Button className={styles.button} variant="contained" onClick={() => mapDispatchToProps({type: "LOGADO" })} >sign in</Button>
+          <Button className={styles.button} variant="contained" onClick={action} >sign in</Button>
         </form>
       </SignComponent>
     </div>
 
   );
 }
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(userAction, dispatch);
 
-export default connect(null, mapDispatchToProps)(Home);
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) =>({
+  action: bindActionCreators(userAction, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
