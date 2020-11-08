@@ -11,5 +11,20 @@ export default makeStyles((theme) => ({
   backgroundColor: '#312e36',
   color: '#ffffff',
   padding: 10
- }
+ }, content: {
+    flex: 1,
+    margin: 20
+  },
+  box: {
+    padding: 10,
+    paddingLeft: 100,
+    paddingRight: 100,
+    marginTop: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+  }
 }));
