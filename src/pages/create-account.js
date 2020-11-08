@@ -10,7 +10,7 @@ import SignComponent from '../components/Sign'
 export default function Home() {
   const styles = useStyles();
 
-  return (
+  return (  
     <div>
       <AppBar />
       <SignComponent>
