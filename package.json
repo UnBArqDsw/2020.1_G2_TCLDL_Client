@@ -12,7 +12,9 @@
     "@material-ui/icons": "^4.9.1",
     "next": "^9.5.5",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
