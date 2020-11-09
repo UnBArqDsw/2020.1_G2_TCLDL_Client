@@ -10,11 +10,13 @@
     color: #121212;
 }
   
-
-
+ 
+.button{
+    text-align: right;
+}
 
 .boxTitle {
-    display: flex;
+    display: flex; 
     margin-top: 3rem;
     margin-bottom: 3rem;
   }

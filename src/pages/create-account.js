@@ -3,7 +3,7 @@ import Head from 'next/head';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import useStyles from '../styles/CreateAccount.module';
+import useStyles from '../styles/components/CreateAccount.module';
 
 import AppBar from '../components/AppBar'
 import SignComponent from '../components/Sign'
