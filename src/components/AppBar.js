@@ -22,6 +22,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as userAction } from '../store/reducer';
+import MenuListComposition from './ProfileMenu';
 
 const PrimarySearchAppBar = ({ user }) => {
   const classes = useStyles();
@@ -124,20 +125,24 @@ const PrimarySearchAppBar = ({ user }) => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          
-            <div className={classes.sectionDesktop}>
-              <Link href="/submit-paper">
-                <Button className={classes.signUp} variant="contained">SUBMIT PAPER</Button>
-              </Link>
-            </div>
-            <div className={classes.sectionDesktop}>
-              <Link href="/login">
-                <Button className={classes.signIn}>SIGN IN</Button>
-              </Link>
-              <Link href="/create-account">
-                <Button className={classes.signUp} variant="contained">SIGN UP</Button>
-              </Link>
-            </div>
+
+          <div className={classes.sectionDesktop}>
+            <Link href="/submit-paper">
+              <Button className={classes.signUp} variant="contained">SUBMIT PAPER</Button>
+            </Link>
+          </div>
+          <div className={classes.sectionDesktop}>
+            <Link href="/login">
+              <Button className={classes.signIn}>SIGN IN</Button>
+            </Link>
+            <Link href="/create-account">
+              <Button className={classes.signUp} variant="contained">SIGN UP</Button>
+            </Link>
+          </div>
+          <MenuListComposition />
+
+
+
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
