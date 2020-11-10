@@ -140,7 +140,7 @@ const PrimarySearchAppBar = ({ user }) => {
                   <Button className={classes.signIn}>SIGN IN</Button>
                 </Link>
                 <Link href="/create-account">
-                  <Button className={classes.signUp} variant="contained">SIGN UPP</Button>
+                  <Button className={classes.signUp} variant="contained">SIGN UP</Button>
                 </Link>
               </>
             )}
