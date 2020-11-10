@@ -127,22 +127,24 @@ const PrimarySearchAppBar = ({ user }) => {
           </div>
 
           <div className={classes.sectionDesktop}>
-            <Link href="/submit-paper">
-              <Button className={classes.signUp} variant="contained">SUBMIT PAPER</Button>
-            </Link>
+            {user ? (
+              <>
+                <Link href="/submit-paper">
+                  <Button className={classes.signUp} variant="contained">SUBMIT PAPER</Button>
+                </Link>
+                <MenuListComposition />
+              </>
+            ) : (
+              <>
+                <Link href="/login">
+                  <Button className={classes.signIn}>SIGN IN</Button>
+                </Link>
+                <Link href="/create-account">
+                  <Button className={classes.signUp} variant="contained">SIGN UPP</Button>
+                </Link>
+              </>
+            )}
           </div>
-          <div className={classes.sectionDesktop}>
-            <Link href="/login">
-              <Button className={classes.signIn}>SIGN IN</Button>
-            </Link>
-            <Link href="/create-account">
-              <Button className={classes.signUp} variant="contained">SIGN UPP</Button>
-            </Link>
-          </div>
-          <MenuListComposition />
-
-
-
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

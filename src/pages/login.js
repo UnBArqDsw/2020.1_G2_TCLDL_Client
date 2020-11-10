@@ -37,6 +37,11 @@ const Home = ({ user, setUser }) => {
     if (!email || !password) {
       return
     }
+
+    setUser({
+      email,
+      name: 'José Manso'
+    })
   }
 
   return (
@@ -46,7 +51,7 @@ const Home = ({ user, setUser }) => {
         <form className={styles.form}>
           <TextField onChange={event => setEmail(event.target.value)} className={styles.field} id="filled-basic" label="Email" variant="outlined" />
           {emailError && <FormHelperText className={styles.helper} error>Email is required </FormHelperText>}
-          <TextField onChange={event => setPassword(event.target.value)} className={styles.field} id="outlined-basic" label="Password" variant="outlined" />
+          <TextField type="password" onChange={event => setPassword(event.target.value)} className={styles.field} id="outlined-basic" label="Password" variant="outlined" />
           {passwordError && <FormHelperText className={styles.helper} error>Password is required</FormHelperText>}
           <Button onClick={handleLogin} className={styles.button} variant="contained">sign in</Button>
         </form>
