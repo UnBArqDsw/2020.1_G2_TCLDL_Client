@@ -4,12 +4,15 @@ export default makeStyles((theme) => ({
  form: {
   display: 'flex',
   flexDirection: 'column',
-  marginTop: 20
+  marginTop: 21
  },
  button: {
   margin: theme.spacing(1),
   backgroundColor: '#312e36',
   color: '#ffffff',
   padding: 10
+ },
+ helper: {
+   marginLeft: 10
  }
 }));

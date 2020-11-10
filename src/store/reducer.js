@@ -1,6 +1,6 @@
 
 const Types = {
-    LOGADO: "1",
+    LOGADO: "LOGADO",
   };
   
   const initialState = {
@@ -17,7 +17,7 @@ const Types = {
   }
   
   export const Creators = {
-    selectUser: (user) => ({
+    setUser: (user) => ({
       type: Types.LOGADO,
       payload: {
         user,

@@ -13,7 +13,7 @@ export default makeStyles((theme) => ({
     margin: 20
   },
   box: {
-    padding: 10,
+    padding: 11,
     paddingLeft: 100,
     paddingRight: 100,
     marginTop: 20,
@@ -33,6 +33,6 @@ export default makeStyles((theme) => ({
     padding: 20
   },
   right: {
-    marginLeft: 20
+    marginLeft: 21
   },
 }));

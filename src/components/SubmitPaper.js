@@ -9,27 +9,22 @@ export default function SubmitPaper({ text, fieldText1, fieldText2 }) {
 
     return (
         <>
-            <Grid container spacing={0} >
-                <Grid item xs={12} sm={4}>
-                    <div className={style.text}>
-                        {text}
-                    </div>
-                </Grid>
-                <Grid item xs={12} sm={4}>
+            <div container spacing={0}>
+                <div item xs={12} sm={4}>
                     <div className={styles.content}>
                         <form className={styles.form} noValidate autoComplete="off">
-                            <TextField className={styles.field} id="outlined-basic" label={fieldText1} variant="outlined" />
+                            <TextField className={styles.field} id="outlined-basic" label={fieldText1} variant="outlined"  />
                         </form>
                     </div>
-                </Grid>
-                <Grid item xs={12} sm={4}>
+                </div>
+                <div item xs={12} sm={4}>
                     <div className={styles.content}>
                         <form className={styles.form} noValidate autoComplete="off">
                             <TextField className={styles.field} id="outlined-basic" label={fieldText2} variant="outlined" />
                         </form>
                     </div>
-                </Grid>
-            </Grid>
+                </div>
+            </div>
         </>
     );
 }
