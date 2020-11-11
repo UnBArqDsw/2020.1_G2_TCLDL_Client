@@ -17,6 +17,19 @@ export default makeStyles((theme) => ({
     flex: 1,
     margin: 20
   },
+  flex: {
+    display: 'flex',
+    flex: 1,
+    margin: 10
+  },
+  sameLine: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'strech',
+  },
+  boxOnRight: {
+    marginLeft: 30
+  },
   box: {
     padding: 10,
     paddingLeft: 100,
@@ -30,7 +43,14 @@ export default makeStyles((theme) => ({
     },
   },
   field:{
-      margin: 9,
+    margin: 10,
+  },
+  selectField: {
+    margin: 10,
+    minWidth: 200,
+  },
+  section: {
+    marginTop: 20
   },
   icon: {
     alignSelf: 'center',
