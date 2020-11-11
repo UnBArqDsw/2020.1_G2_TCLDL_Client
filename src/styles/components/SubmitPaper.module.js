@@ -3,6 +3,8 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   root: {
     padding: 20,
+    display: 'flex',
+    flexDirection: 'column',
   },
   container: {
     display: 'flex',

@@ -3,7 +3,7 @@ import AppBar from '../components/AppBar'
 import { Container } from '@material-ui/core';
 import useStyles from '../styles/components/SubmitPaper.module';
 import Button from '@material-ui/core/Button';
-import GridPapers from '../components/SubmitPaper'
+import { TextField } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 
 export default function SubmitPaper() {
@@ -19,9 +19,22 @@ export default function SubmitPaper() {
         </div>
 
         <Paper elevation={3} className={styles.root}>
-          <GridPapers text="" fieldText1="Paper Name" fieldText2="Author(s)" />
-          <GridPapers text="Lorem ipsum dolor sit amet" fieldText1="Release Date " fieldText2="Domain" />
-          <GridPapers text="consectetur adipiscing elit," fieldText1="Data Set" fieldText2="Model Name" />
+          <h3>Paper information</h3>
+          <div>
+            <div>
+              <TextField className={styles.field} id="outlined-basic" label="Paper name"  />
+              <TextField className={styles.field} id="outlined-basic" label="Release date"  />
+            </div>
+
+            <TextField className={styles.field} id="outlined-basic" label="Author(s)"  />
+            
+            <div>
+              <TextField className={styles.field} id="outlined-basic" label="Domain"  />
+              <TextField className={styles.field} id="outlined-basic" label="Dataset"  />
+            </div>
+
+            <TextField className={styles.field} id="outlined-basic" label="Model name"  />
+          </div>
         </Paper>
         <div className={styles.buttons}>
           <Button className={styles.button} variant="contained">SUBMIT PAPER</Button>
