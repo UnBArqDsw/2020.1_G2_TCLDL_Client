@@ -95,7 +95,7 @@ export default function SubmitPaper() {
             <h2>Accuracy information</h2>
             <div>
               <div>
-                <TextField className={styles.field} id="outlined-basic" label="Accuracy Type"  />
+                {toggle('Accuracy Type', handleAccuracyTypeChange, accuracyType)}
                 <TextField className={styles.field} id="outlined-basic" label="Accuracy"  />
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function SubmitPaper() {
                 <h4 className={styles.field}>CPU</h4>
                 <div>
                   <div>
-                    <TextField className={styles.field} id="outlined-basic" label="CPU Model"  />
+                    {toggle('CPU model', handleCpuModelChange, cpuModel)}
                     <TextField className={styles.field} id="outlined-basic" label="# of CPU (s)"  />
                   </div>
                   <TextField className={styles.field} id="outlined-basic" label="CPU's Gflops (32fp)"  />
@@ -119,7 +119,7 @@ export default function SubmitPaper() {
                 <h4 className={styles.field}>GPU</h4>
                 <div>
                   <div>
-                    <TextField className={styles.field} id="outlined-basic" label="GPU Model"  />
+                    {toggle('GPU model', handleGpuModelChange, gpuModel)}
                     <TextField className={styles.field} id="outlined-basic" label="# of GPU (s)"  />
                   </div>
                   <TextField className={styles.field} id="outlined-basic" label="GPU's Gflops (32fp)"  />
@@ -131,7 +131,7 @@ export default function SubmitPaper() {
             <h4 className={styles.field}>TPU</h4>
               <div>
                 <div>
-                  <TextField className={styles.field} id="outlined-basic" label="TPU Model"  />
+                  {toggle('TPU model', handleTpuModelChange, tpuModel)}
                   <TextField className={styles.field} id="outlined-basic" label="# of TPU (s)"  />
                 </div>
                 <TextField className={styles.field} id="outlined-basic" label="TPU's Gflops (32fp)"  />
