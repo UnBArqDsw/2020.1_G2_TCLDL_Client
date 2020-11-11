@@ -32,6 +32,18 @@ export default function SubmitPaper() {
     setDataset(event.target.value);
   };
 
+  const handleCpuModelChange = (event) => {
+    setCpuModel(event.target.value);
+  };
+  
+  const handleGpuModelChange = (event) => {
+    setGpuModel(event.target.value);
+  };
+
+  const handleTpuModelChange = (event) => {
+    setTpuModel(event.target.value);
+  };
+
 
   const toggle = (name, func, value) => (
     <FormControl className={styles.selectField}>
