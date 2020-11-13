@@ -1,15 +1,10 @@
 import React from 'react';
 import AppBar from '../components/AppBar'
-import { Container } from '@material-ui/core';
 import useStyles from '../styles/components/SubmitPaper.module';
-import Button from '@material-ui/core/Button';
-import { TextField } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import { Container, TextField, Paper, Button, InputLabel, MenuItem, FormControl, Select, IconButton} from '@material-ui/core';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
+
 
 export default function SubmitPaper() {
   const styles = useStyles();
@@ -76,12 +71,20 @@ export default function SubmitPaper() {
               <div>
                   <TextField className={styles.flex} id="outlined-basic" label="Paper Name" />
                 <div className={styles.sameLine}>
-                  <TextField className={styles.flex_author} id="outlined-basic" label="Author(s)"  />
-                  <TextField className={styles.flex_date} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date"/>
+                  <div className={styles.flexButtons}>
+                    <TextField id="outlined-basic" label="Author(s)"  />
+                    <IconButton>
+                      <RemoveIcon />
+                    </IconButton>
+                    <IconButton>
+                      <AddIcon />
+                    </IconButton>
+                  </div>
+                  <TextField className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date"/>
                 </div>
                 <div className={styles.sameLine}>
-                  <TextField className={styles.flex_links} id="outlined-basic" label="Paper Link" />
-                  <TextField className={styles.flex_links} id="outlined-basic" label="Code Link" />
+                  <TextField className={styles.flexLinks} id="outlined-basic" label="Paper Link" />
+                  <TextField className={styles.flexLinks} id="outlined-basic" label="Code Link" />
                 </div>
                 <div>
                   {toggle('Domain', handleDomainChange, domain)}
