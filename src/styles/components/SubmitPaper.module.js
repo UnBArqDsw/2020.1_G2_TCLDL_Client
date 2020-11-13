@@ -2,7 +2,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   root: {
-    padding: 20,
+    padding: 60,
     display: 'flex',
     flexDirection: 'column',
   },
@@ -17,17 +17,19 @@ export default makeStyles((theme) => ({
     flex: 1,
     margin: 20
   },
-  flex_author:{
+  flexButtons:{
     display: 'flex',
-    flex: 0.7,
+    flex: .7,
     margin: 10,
+    flexDirection: 'row',
+    alignSelf: 'strech',
   },
-  flex_date:{
+  flexDate:{
     display: 'flex',
     flex: 0.3,
     margin: 10,
   },
-  flex_links: {
+  flexLinks: {
     display: 'flex',
     flex: 0.5,
     margin: 10,
