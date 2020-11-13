@@ -1,19 +1,13 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .main {
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .footer {
@@ -23,6 +17,74 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.domains {
+  background-color: #312E36;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  flex-direction: column;
+}
+
+.domainsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.domains h1 {
+  color:#ffffff;
+}
+
+.logo {
+  margin: 200px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ibmLogo {
+  align-self: center;
+  width: 250px;
+  height: auto;
+  margin-top: 50px;
+}
+
+
+.mitLogo {
+  width: 210px;
+  height: auto;
+  margin: 50px 20px 0px;
+}
+
+.mainIcon {
+  width: 250px;
+  height: auto;
+  margin: 10px 20px;
+}
+
+.smalIcon {
+  width: 130px;
+  height: auto;
+  margin: 0px 35px 0px;
+}
+
+.sameLine {
+  display: 'flex';
+  flex-direction: 'row';
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sameColumn {
+  display: 'flex';
+  flex-direction: 'column';
 }
 
 .footer img {
@@ -49,12 +111,12 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
 }
 
 .title,
 .description {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .description {

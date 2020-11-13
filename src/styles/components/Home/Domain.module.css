@@ -1,0 +1,18 @@
+.domain {
+  background-color: #ffffff;
+  padding: 0px 20px;
+  margin: 20px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+
+.domain h4 {
+  font-size: 13px;
+}
+
+.domain p {
+  font-size: 10px;
+}

@@ -14,6 +14,7 @@ export default function SubmitPaper() {
   const [cpuModel, setCpuModel] = React.useState('');
   const [gpuModel, setGpuModel] = React.useState('');
   const [tpuModel, setTpuModel] = React.useState('');
+  const [authors, setAuthors] = React.useState(['']);
 
   const handleDomainChange = (event) => {
     setDomain(event.target.value);
@@ -73,7 +74,7 @@ export default function SubmitPaper() {
                 <div className={styles.sameLine}>
                   <div className={styles.flexButtons}>
                     <TextField id="outlined-basic" label="Author(s)"  />
-                    <IconButton>
+                    <IconButton onClick>
                       <RemoveIcon />
                     </IconButton>
                     <IconButton>
@@ -113,7 +114,7 @@ export default function SubmitPaper() {
             <h2>Hardware information</h2>
             <div className={styles.sameLine}>
               <div>
-                <h4 className={styles.field}>CPU</h4>
+                <h4 className={styles.field}>CPU </h4>
                 <div>
                   <div>
                     {toggle('CPU model', handleCpuModelChange, cpuModel)}

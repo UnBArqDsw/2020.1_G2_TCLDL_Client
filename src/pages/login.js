@@ -57,7 +57,6 @@ const Home = ({ user, setUser }) => {
         </form>
       </SignComponent>
     </div>
-
   );
 }
 

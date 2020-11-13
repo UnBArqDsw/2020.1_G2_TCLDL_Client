@@ -1,23 +1,51 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import AppBar from '../components/AppBar'
+import Domain from '../components/Home/Domain'
 
 export default function Home() {
   return (
     <div>
       <AppBar />
+
       <div className={styles.container}>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
 
         <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to
-            {' '}
-            <a href="https://nextjs.org">Next.js!</a>
-          </h1>
+
+          <div className={styles.domains}>
+            
+            <h1 className={styles.title}>
+              Domains
+            </h1>
+          <div className={styles.domainsList}>
+            <Domain name="Image Classification" description="2123 Papers | 1 Benchmark" />
+            <Domain name="Object Detection" description="2123 Papers | 212 Benchmarks" />
+            <Domain name="Named Entity Recognition" description="2123 Papers | 212 Benchmarks" />
+          </div>
+          <div className={styles.domainsList}>
+            <Domain name="Machine Translation" description="2123 Papers | 212 Benchmarks" />
+            <Domain name="Question Answering" description="2123 Papers | 212 Benchmarks" />
+          </div>
+
+            
+          </div>
+
+          <div className={styles.logo}>
+            <div>
+              <h2> Developed by</h2>
+            </div>
+            <img src="/ibmLogo.jpg" className={styles.ibmLogo} alt="ibm_logo" />
+            <div>
+              <div className={styles.ibmLogoDiv}>
+              </div>
+              <div className={styles.sameLine}>
+                <img src="/unbLogo.jpg" className={styles.smalIcon} alt="unb_logo" />
+                <img src="/mitLogo.jpg" className={styles.mitLogo} alt="mit_logo" />
+                <img src="/yonseiLogo.jpg" className={styles.smalIcon} alt="yonsei_logo" />
+              </div>
+            </div>
+          </div>
+
         </main>
 
         <footer className={styles.footer}>
