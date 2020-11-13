@@ -75,14 +75,19 @@ export default function SubmitPaper() {
             <div className={styles.sameLine}>
               <div>
                   <TextField className={styles.flex} id="outlined-basic" label="Paper Name" />
-                  <TextField className={styles.flex} id="outlined-basic" label="Author(s)"  />
-
-                <div>
-                {toggle('Domain', handleDomainChange, domain)}
-                {toggle('Dataset', handleDatasetChange, dataset)}
-                <TextField className={styles.field} id="outlined-basic" label="Model Name"  />
+                <div className={styles.sameLine}>
+                  <TextField className={styles.flex_author} id="outlined-basic" label="Author(s)"  />
+                  <TextField className={styles.flex_date} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date"/>
                 </div>
-                <TextField className={styles.field} id="outlined-basic" label="Release Date" />
+                <div className={styles.sameLine}>
+                  <TextField className={styles.flex_links} id="outlined-basic" label="Paper Link" />
+                  <TextField className={styles.flex_links} id="outlined-basic" label="Code Link" />
+                </div>
+                <div>
+                  {toggle('Domain', handleDomainChange, domain)}
+                  {toggle('Dataset', handleDatasetChange, dataset)}
+                  <TextField className={styles.field} id="outlined-basic" label="Model Name"  />
+                </div>
               </div>
               <div className={styles.boxOnRight}>
 
@@ -128,7 +133,7 @@ export default function SubmitPaper() {
             </div>
 
             <div>
-            <h4 className={styles.field}>TPU</h4>
+            <h4 className={styles.subsection}>TPU</h4>
               <div>
                 <div>
                   {toggle('TPU model', handleTpuModelChange, tpuModel)}
