@@ -2,8 +2,18 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import AppBar from '../components/AppBar'
 import Domain from '../components/Home/Domain'
+import Highcharts from 'highcharts'
+import HighchartsReact from 'highcharts-react-official'
 
 export default function Home() {
+  const options = {
+    series: [{
+      data: [1, 2, 3]
+    }, {
+      data: [4, 5, 6]
+    }]
+  }
+
   return (
     <div>
       <AppBar />
@@ -12,6 +22,13 @@ export default function Home() {
 
         <main className={styles.main}>
 
+          <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
+          
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options}
+          />
+          
           <div className={styles.domains}>
             
             <h1 className={styles.title}>
@@ -19,12 +36,12 @@ export default function Home() {
             </h1>
           <div className={styles.domainsList}>
             <Domain name="Image Classification" description="2123 Papers | 1 Benchmark" />
-            <Domain name="Object Detection" description="2123 Papers | 212 Benchmarks" />
-            <Domain name="Named Entity Recognition" description="2123 Papers | 212 Benchmarks" />
+            <Domain name="Object Detection" description="2123 Papers | 1 Benchmark" />
+            <Domain name="Named Entity Recognition" description="2123 Papers | 2 Benchmarks" />
           </div>
           <div className={styles.domainsList}>
-            <Domain name="Machine Translation" description="2123 Papers | 212 Benchmarks" />
-            <Domain name="Question Answering" description="2123 Papers | 212 Benchmarks" />
+            <Domain name="Machine Translation" description="2123 Papers | 1 Benchmarks" />
+            <Domain name="Question Answering" description="2123 Papers | 1 Benchmarks" />
           </div>
 
             
@@ -47,17 +64,6 @@ export default function Home() {
           </div>
 
         </main>
-
-        <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-          >
-            Powered by
-            {' '}
-            <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-          </a>
-        </footer>
       </div>
     </div>
   );

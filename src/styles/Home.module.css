@@ -41,6 +41,15 @@
   color:#ffffff;
 }
 
+.tcldlLogo {
+  display: flex;
+  width: auto;
+  height: 150px;
+  justify-content: center;
+  align-self: center;
+  margin: 20px;
+}
+
 .logo {
   margin: 200px 0px;
   display: flex;
