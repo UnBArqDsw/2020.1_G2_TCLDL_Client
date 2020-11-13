@@ -17,6 +17,21 @@ export default makeStyles((theme) => ({
     flex: 1,
     margin: 20
   },
+  flex_author:{
+    display: 'flex',
+    flex: 0.7,
+    margin: 10,
+  },
+  flex_date:{
+    display: 'flex',
+    flex: 0.3,
+    margin: 10,
+  },
+  flex_links: {
+    display: 'flex',
+    flex: 0.5,
+    margin: 10,
+  },
   flex: {
     display: 'flex',
     flex: 1,
@@ -42,6 +57,9 @@ export default makeStyles((theme) => ({
         margin: theme.spacing(1),
     },
   },
+  subsection:{
+    marginTop: 50,
+  },
   field:{
     margin: 10,
   },
@@ -50,7 +68,7 @@ export default makeStyles((theme) => ({
     minWidth: 200,
   },
   section: {
-    marginTop: 20
+    marginTop: 20,
   },
   icon: {
     alignSelf: 'center',
