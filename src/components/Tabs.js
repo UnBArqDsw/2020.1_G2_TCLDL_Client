@@ -51,25 +51,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TabsWrappedLabel() {
+export default function TabsWrappedLabel({ tabs }) {
   const classes = useStyles();
   const [value, setValue] = React.useState('one');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    tabs[newValue].onSelect()
   };
 
   return (
     <div className={classes.root}>
       <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
-        <Tab
-          value="one"
-          label="New Arrivals in the Longest Text of Nonfiction"
-          wrapped
-          {...a11yProps('one')}
-        />
-        <Tab value="two" label="Item Two" {...a11yProps('two')} />
-        <Tab value="three" label="Item Three" {...a11yProps('three')} />
+        {tabs.map((value, index) => (
+          <Tab
+            value={index}
+            label={value.label}
+            wrapped
+            {...a11yProps('one')}
+          />
+        ))}
+        {/* <Tab value="two" label="Item Two" {...a11yProps('two')} />
+        <Tab value="three" label="Item Three" {...a11yProps('three')} /> */}
       </Tabs>
       <TabPanel value={value} index="one">
         Item One
