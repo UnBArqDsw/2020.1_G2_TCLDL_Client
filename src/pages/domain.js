@@ -1,19 +1,13 @@
 // Imports
 import React from "react";
-//import { Link } from "react-router-dom";
 import { Container } from "@material-ui/core";
-import styled from "styled-components";
-//import { useTranslation } from "react-i18next";
 import AppBar from "../components/AppBar";
-
-// Styled components
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
-import { red } from "@material-ui/core/colors";
+import ButtonBase from "@material-ui/core/ButtonBase";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,61 +18,172 @@ const useStyles = makeStyles((theme) => ({
     margin: `${theme.spacing(1)}px auto`,
     padding: theme.spacing(2),
   },
-  title: {
-    color: red,
+  img: {
+    margin: "auto",
+    display: "block",
+    maxWidth: "100%",
+    maxHeight: "100%",
+  },
+  image: {
+    width: 128,
+    height: 128,
   },
 }));
 
-const message = `Truncation should be conditionally applicable on this long line of text
- as this is a much longer line than what the container can support. `;
+const message = `Truncation should be  `;
 
-function Domain() {
+export default function Domain() {
   const classes = useStyles();
 
-  function FormRow() {
-    return (
-      <React.Fragment>
-        <Grid container item xs={12} spacing={3}>
-          <Paper className={classes.paper}>
-            <Grid container wrap="nowrap" spacing={2}>
-              <Grid item>
-                <Avatar>W</Avatar>
-              </Grid>
-              <Grid item xs>
-                <Typography>{message}</Typography>
-              </Grid>
-            </Grid>
-          </Paper>
-
-          <FormRow />
-        </Grid>
-      </React.Fragment>
-    );
-  }
-
   return (
-    // All components inside a container
     <div>
       <AppBar />
+
       <Container>
         <div>
-          <h1>Domain</h1>
+          <h1 style={{marginLeft: '200px', fontFamily: "Roboto"}}>Domain</h1>
         </div>
-        <div className={classes.root}>
-          <Grid container spacing={1}>
-            <Grid container item xs={12} spacing={3}>
+        <div className={classes.root} style={{ marginLeft: "200px" }}>
+          <Grid container spacing={10}>
+            <Grid container item xs={3}>
               <Paper className={classes.paper}>
                 <Grid container wrap="nowrap" spacing={2}>
-                  <Grid item>
-                    <Avatar>W</Avatar>
-                  </Grid>
-                  <Grid item xs>
-                    <Typography>{message}</Typography>
+                  <Grid
+                    item
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      Machine Translation
+                    </Typography>
+                    <ButtonBase className={classes.image}>
+                      <img src="/machine.png" alt="logo" />
+                    </ButtonBase>
+                    <Typography>2 Benchmarks</Typography>
                   </Grid>
                 </Grid>
               </Paper>
-
-              <FormRow />
+            </Grid>
+            <Grid container item xs={3}>
+              <Paper className={classes.paper}>
+                <Grid container wrap="nowrap" spacing={2}>
+                  <Grid
+                    item
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      Image Classification
+                    </Typography>
+                    <ButtonBase className={classes.image}>
+                      <img src="/classification.png" alt="logo" />
+                    </ButtonBase>
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      2 Benchmarks
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Paper>
+            </Grid>
+            <Grid container item xs={3}>
+              <Paper className={classes.paper}>
+                <Grid container wrap="nowrap" spacing={2}>
+                  <Grid
+                    item
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      Qustion Answering
+                    </Typography>
+                    <ButtonBase className={classes.image}>
+                      <img src="/question.png" alt="logo" />
+                    </ButtonBase>
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      2 Benchmarks
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Paper>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.root} style={{ marginLeft: "200px" }}>
+          <Grid container spacing={10}>
+            <Grid container item xs={3}>
+              <Paper className={classes.paper}>
+                <Grid container wrap="nowrap" spacing={2}>
+                  <Grid
+                    item
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      Named Entity Recognition
+                    </Typography>
+                    <ButtonBase className={classes.image}>
+                      <img src="/named.png" alt="logo" />
+                    </ButtonBase>
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      2 Benchmarks
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Paper>
+            </Grid>
+            <Grid container item xs={3}>
+              <Paper className={classes.paper}>
+                <Grid container wrap="nowrap" spacing={2}>
+                  <Grid
+                    item
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      Object Detection
+                    </Typography>
+                    <ButtonBase className={classes.image}>
+                      <img src="/object.png" alt="logo" />
+                    </ButtonBase>
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      2 Benchmarks
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Paper>
+            </Grid>
+            <Grid container item xs={3}>
+              <Paper className={classes.paper}>
+                <Grid container wrap="nowrap" spacing={2}>
+                  <Grid
+                    item
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      Speech Recognition
+                    </Typography>
+                    <ButtonBase className={classes.image}>
+                      <img src="/preview.png" alt="logo" />
+                    </ButtonBase>
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                      2 Benchmarks
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Paper>
             </Grid>
           </Grid>
         </div>
@@ -86,5 +191,3 @@ function Domain() {
     </div>
   );
 }
-
-export default Domain;
