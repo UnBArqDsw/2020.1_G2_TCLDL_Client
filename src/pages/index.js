@@ -29,6 +29,44 @@ export default function Home() {
     }]
   }
 
+  const tabs = [
+    {
+      label: 'Image Classification',
+      onSelect: () => {
+        setData(imagenet)
+        setLabel("TOP 1")
+      }
+    },
+    {
+      label: 'Object Detection',
+      onSelect: () => {
+        setData(mscoco)
+        setLabel("BOX AP")
+      }
+    },
+    {
+      label: 'Question Answering',
+      onSelect: () => {
+        setData(squad1_1)
+        setLabel("F1 score")
+      }
+    },
+    {
+      label: 'Named Entity Recognition',
+      onSelect: () => {
+        setData(conll2003)
+        setLabel("F1 score")
+      }
+    },
+    {
+      label: 'Machine Translation',
+      onSelect: () => {
+        setData(wmt2014_enfr)
+        setLabel("BLEU")
+      }
+    },
+  ]
+
   return (
     <div>
       <AppBar />
@@ -38,7 +76,7 @@ export default function Home() {
         <main className={styles.main}>
 
           <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
-          <Tabs />
+          <Tabs tabs={tabs} />
           <button onClick={() => {
             setData(imagenet)
             setLabel("TOP 1")
