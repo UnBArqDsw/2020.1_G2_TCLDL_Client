@@ -26,6 +26,7 @@ function TabPanel({ children, value, index, ...props }) {
   );
 }
 
+
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
@@ -41,8 +42,12 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+    color: '#000000',
+    boxShadow: 0,
+    '& .MuiPaper-elevation4': {
+      boxShadow: 0
+    }
   },
 }));
 
@@ -56,18 +61,16 @@ export default function TabsWrappedLabel() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
-          <Tab
-            value="one"
-            label="New Arrivals in the Longest Text of Nonfiction"
-            wrapped
-            {...a11yProps('one')}
-          />
-          <Tab value="two" label="Item Two" {...a11yProps('two')} />
-          <Tab value="three" label="Item Three" {...a11yProps('three')} />
-        </Tabs>
-      </AppBar>
+      <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
+        <Tab
+          value="one"
+          label="New Arrivals in the Longest Text of Nonfiction"
+          wrapped
+          {...a11yProps('one')}
+        />
+        <Tab value="two" label="Item Two" {...a11yProps('two')} />
+        <Tab value="three" label="Item Three" {...a11yProps('three')} />
+      </Tabs>
       <TabPanel value={value} index="one">
         Item One
       </TabPanel>
