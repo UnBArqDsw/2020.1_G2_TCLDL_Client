@@ -10,6 +10,12 @@
   flex-direction: column;
 }
 
+.chart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .footer {
   width: 100%;
   height: 100px;
@@ -38,10 +44,18 @@
 }
 
 .button {
-    background-color: '#312e36';
-    color: '#ffffff';
-    padding: 10;
-    align-self: 'center';
+  background-color: '#312e36';
+  color: '#ffffff';
+  padding: 10;
+  align-self: 'center';
+}
+
+.charts {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .domains h1 {

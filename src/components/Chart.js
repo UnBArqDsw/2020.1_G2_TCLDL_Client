@@ -153,6 +153,8 @@ export default ({ data, label, isByYear}) => {
   useEffect(() => {
     generateChart(data, label);
   }, [data, label])
+
+
   if (typeof Highcharts === "object") {
     HighchartsExporting(Highcharts);
   }
