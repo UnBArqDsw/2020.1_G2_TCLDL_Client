@@ -5,24 +5,22 @@ import HighchartsReact from "highcharts-react-official";
 
 import Highcharts from "highcharts/highcharts.src.js";
 import HighchartsExporting from "highcharts/modules/exporting";
-import LabelComponent from "./label";
 import regression from "regression";
-import imagenet from "./imagenet_data";
-import mscoco from "./mscoco_data";
-import squad1_1 from "./squad1_1_data";
-import conll2003 from "./conll2003_data";
-import wmt2014_enfr from "./wmt2014_en-fr_data";
-import wmt2014_enge from "./wmt2014_en-ge_data";
+import imagenet from "./data/imagenet_data";
+import mscoco from "./data/mscoco_data";
+import squad1_1 from "./data/squad1_1_data";
+import conll2003 from "./data/conll2003_data";
+import wmt2014_enfr from "./data/wmt2014_en-fr_data";
+import wmt2014_enge from "./data/wmt2014_en-ge_data";
 
 export default class Chart extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.afterChartCreated = this.afterChartCreated.bind(this);
     this.state = {
       chartOptions: {}
     };
   }
-
+x
   componentDidMount() {
     this.generateChart(imagenet, "TOP 1");
   }
@@ -168,25 +166,7 @@ export default class Chart extends React.PureComponent {
     this.setState({ chartOptions: chart });
   };
 
-  afterChartCreated(chart) {
-    this.internalChart = chart;
-    this.forceUpdate();
-  }
-
-  componentDidUpdate() {
-    //this.internalChart.getMargins(); // redraw
-    this.internalChart.reflow();
-  }
-
   render() {
-    const chart = this.internalChart,
-      customLabels = [];
-
-    if (chart && chart.xAxis[0]) {
-      Highcharts.objectEach(chart.xAxis[0].ticks, function (tick) {
-        customLabels.push(<LabelComponent tick={tick} />);
-      });
-    }
 
     if (typeof Highcharts === "object") {
       HighchartsExporting(Highcharts);
@@ -197,9 +177,7 @@ export default class Chart extends React.PureComponent {
         <HighchartsReact
           highcharts={Highcharts}
           options={this.state.chartOptions}
-          callback={this.afterChartCreated}
         />
-        {customLabels}
         <button onClick={() => this.generateChart(imagenet, "TOP 1")}>
           Imagenet
         </button>
