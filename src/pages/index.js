@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import AppBar from '../components/AppBar'
@@ -5,8 +7,19 @@ import Domain from '../components/Home/Domain'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import Chart from '../components/Chart'
+import {
+  imagenet,
+  mscoco,
+  squad1_1,
+  conll2003,
+  wmt2014_enfr,
+  wmt2014_enge
+} from '../components/data'
 
 export default function Home() {
+  const [data, setData] = useState(imagenet)
+  const [label, setLabel] = useState("TOP 1")
+
   const options = {
     series: [{
       data: [1, 2, 3]
@@ -24,8 +37,43 @@ export default function Home() {
         <main className={styles.main}>
 
           <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
-          
-          <Chart />
+          <button onClick={() => {
+            setData(imagenet)
+            setLabel("TOP 1")
+          }}>
+            Imagenet
+          </button>
+          <button onClick={() => {
+            setData(mscoco)
+            setLabel("BOX AP")
+          }}>
+            MS COCO
+          </button>
+          <button onClick={() => {
+            setData(squad1_1)
+            setLabel("F1 score")
+          }}>
+            SQUAD 1.1
+          </button>
+          <button onClick={() => {
+            setData(conll2003)
+            setLabel("F1 score")
+          }}>
+            CoNLL 2003
+          </button>
+          <button onClick={() => {
+            setData(wmt2014_enfr)
+            setLabel("BLEU")
+          }}>
+            WMT 2014 (EN-FR)
+          </button>
+          <button onClick={() => {
+            setData(wmt2014_enge)
+            setLabel("BLEU")
+          }}>
+            WMT 2014 (EN-GE)
+          </button>
+          <Chart data={data} label={label} />
           <div className={styles.domains}>
             
             <h1 className={styles.title}>
