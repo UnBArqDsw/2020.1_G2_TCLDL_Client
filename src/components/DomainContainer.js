@@ -40,7 +40,11 @@ export default function DomainContainer() {
         <div>
           <h1 style={{ fontFamily: 'Roboto', marginLeft: "200px"}}>Domain</h1>
         </div>
+        <div>
+          <p style={{ fontFamily: 'Roboto', marginLeft: "200px",  marginTop: "50px"}}>06 domains available</p>
+        </div>
         <div className={classes.root} style={{marginLeft: "200px"}} >
+        <hr  size="1px" width="73%" align="left"  noshade style={{marginBottom: "50px"}}></hr>
           <Grid container spacing={8}>
             <Grid container item xs={3}>
               <Paper className={classes.paper}>
@@ -123,7 +127,7 @@ export default function DomainContainer() {
                     justify="center"
                     alignItems="center"
                   >
-                    <Typography style={{ fontFamily: "Roboto Mono" }}>
+                    <Typography style={{ fontFamily: "Roboto Mono", marginLeft: "45px" }}>
                       Named Entity Recognition
                     </Typography>
                     <ButtonBase className={classes.image}>
