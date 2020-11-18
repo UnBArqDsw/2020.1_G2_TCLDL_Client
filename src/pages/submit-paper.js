@@ -11,6 +11,9 @@ export default function SubmitPaper() {
   const styles = useStyles();
   const [domain, setDomain] = React.useState('');
   const [dataset, setDataset] = React.useState('');
+  const [paperLink, setPaperLink] = React.useState('');
+  const [codeLink, setCodeLink] = React.useState('');
+  const [modelName, setModelName] = React.useState('');
   const [accuracyType, setAccuracyType] = React.useState('');
   const [cpuModel, setCpuModel] = React.useState('');
   const [gpuModel, setGpuModel] = React.useState('');
@@ -27,6 +30,18 @@ export default function SubmitPaper() {
   const handleDatasetChange = (event) => {
     setDataset(event.target.value);
   };
+
+  const handlePapelLink = (event) => {
+    setPaperLink(event.target.value);
+  };
+
+  const handleCodeLink = (event) => {
+    setCodeLink(event.target.value);
+  };
+
+  const handleModelName = (event) => {
+    setModelName(event.target.value);
+  }; 
 
   const handleAccuracyTypeChange = (event) => {
     setDataset(event.target.value);
@@ -114,16 +129,16 @@ export default function SubmitPaper() {
                       <AddIcon />
                     </IconButton>
                   </div>
-                  <TextField required className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date" />
+                  <TextField required error={dataset.length === 0 ? true : false} helperText={dataset.length === 0 ? "Required Field" : ""} className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date" onChange={handleDatasetChange} />
                 </div>
                 <div className={styles.sameLine}>
-                  <TextField required className={styles.flexLinks} id="outlined-basic" label="Paper Link" />
-                  <TextField required className={styles.flexLinks} id="outlined-basic" label="Code Link" />
+                  <TextField required error={paperLink.length === 0 ? true : false} helperText={paperLink.length === 0 ? "Required Field" : ""}  className={styles.flexLinks} id="outlined-basic" label="Paper Link" onChange={handlePapelLink}/>
+                  <TextField required error={codeLink.length === 0 ? true : false} helperText={codeLink.length === 0 ? "Required Field" : ""}  className={styles.flexLinks} id="outlined-basic" label="Code Link"onChange={handleCodeLink}/>
                 </div>
                 <div>
                   {toggle('Domain', handleDomainChange, domain)}
                   {toggle('Dataset', handleDatasetChange, dataset)}
-                  <TextField required className={styles.field} id="outlined-basic" label="Model Name" />
+                  <TextField required error={modelName.length === 0 ? true : false} helperText={modelName.length === 0 ? "Required Field" : ""} className={styles.field} id="outlined-basic" label="Model Name" onChange={handleModelName}/>
                 </div>
               </div>
               <div className={styles.boxOnRight}>
