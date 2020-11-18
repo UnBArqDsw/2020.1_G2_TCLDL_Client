@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Head from 'next/head';
 import Button from '@material-ui/core/Button';
 import styles from '../styles/Home.module.css';
+import useStyles from '../styles/Home.module';
 import AppBar from '../components/AppBar'
 import Tabs from '../components/Tabs'
 import Domain from '../components/Home/Domain'
@@ -63,7 +64,7 @@ export default function Home() {
         setData(squad1_1)
         setLabel("F1 score")
         setButtons([{
-          label: 'SQUAD1',
+          label: 'SQUAD 1.1',
           onPress: () => {}
         }])
       }
@@ -103,6 +104,8 @@ export default function Home() {
     },
   ]
 
+
+  const stylesJS = useStyles();
   return (
     <div>
       <AppBar />
@@ -112,11 +115,17 @@ export default function Home() {
         <main className={styles.main}>
 
           <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
-          <Tabs tabs={tabs} />
-          {buttons.map((value) => (
-            <Button onClick={value.onPress} className={styles.button} variant="contained">{value.label}</Button>
-          ))}
-          <Chart data={data} label={label} />
+          <div className={styles.charts}>
+            <Tabs tabs={tabs} />
+            <div>
+              {buttons.map((value) => (
+                <Button onClick={value.onPress} className={stylesJS.button} variant="contained">{value.label}</Button>
+              ))}
+            </div>
+          </div>
+          <div className={styles.chart}>
+            <Chart data={data} label={label} />
+          </div>
           <div className={styles.domains}>
             
             <h1 className={styles.title}>

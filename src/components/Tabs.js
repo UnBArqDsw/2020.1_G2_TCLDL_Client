@@ -10,7 +10,11 @@ import Box from '@material-ui/core/Box';
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    color: '#000000'
+    color: '#000000',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex'
   },
 }));
 
@@ -25,7 +29,7 @@ export default function TabsWrappedLabel({ tabs }) {
 
   return (
     <div className={classes.root}>
-      <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
+      <Tabs className={classes.root} value={value} onChange={handleChange} aria-label="wrapped label tabs example">
         {tabs.map((value, index) => (
           <Tab
             value={index}
