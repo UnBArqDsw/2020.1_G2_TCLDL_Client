@@ -4,6 +4,7 @@ import AppBar from '../components/AppBar'
 import Domain from '../components/Home/Domain'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import Chart from '../components/Chart'
 
 export default function Home() {
   const options = {
@@ -24,11 +25,7 @@ export default function Home() {
 
           <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
           
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={options}
-          />
-          
+          <Chart />
           <div className={styles.domains}>
             
             <h1 className={styles.title}>
