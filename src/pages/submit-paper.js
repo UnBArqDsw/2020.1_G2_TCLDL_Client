@@ -1,9 +1,10 @@
 import React from 'react';
 import AppBar from '../components/AppBar'
 import useStyles from '../styles/components/SubmitPaper.module';
-import { Container, TextField, Paper, Button, InputLabel, MenuItem, FormControl, Select, IconButton} from '@material-ui/core';
+import { Container, TextField, Paper, Button, InputLabel, MenuItem, FormControl, Select, IconButton } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
+import { error } from 'highcharts';
 
 
 export default function SubmitPaper() {
@@ -14,7 +15,10 @@ export default function SubmitPaper() {
   const [cpuModel, setCpuModel] = React.useState('');
   const [gpuModel, setGpuModel] = React.useState('');
   const [tpuModel, setTpuModel] = React.useState('');
+  const authorsField = React.useRef([0]);
   const [authors, setAuthors] = React.useState(['']);
+  const [errorText, setErrorText] = React.useState('');
+  const [text, setText] = React.useState('');
 
   const handleDomainChange = (event) => {
     setDomain(event.target.value);
@@ -31,7 +35,7 @@ export default function SubmitPaper() {
   const handleCpuModelChange = (event) => {
     setCpuModel(event.target.value);
   };
-  
+
   const handleGpuModelChange = (event) => {
     setGpuModel(event.target.value);
   };
@@ -42,7 +46,7 @@ export default function SubmitPaper() {
 
 
   const toggle = (name, func, value) => (
-    <FormControl className={styles.selectField}>
+    <FormControl required className={styles.selectField}>
       <InputLabel>{name}</InputLabel>
       <Select
         value={value}
@@ -55,13 +59,39 @@ export default function SubmitPaper() {
     </FormControl>
   )
 
+  const addAuthorsField = () => {
+    var newInput = authorsField.current.length;
+    let input = authorsField.current;
+    input.push(newInput);
+    authorsField.current = input;
+    console.log(input);
+  }
+
+
+  const removeAuthorsField = () => {
+    let input = authorsField.current;
+    if (authorsField.current.length != 1) {
+      input.pop();
+      authorsField.current = input;
+    }
+  }
+
+  const authorField = () => {
+    return  authorsField.current.map ((el, index) => 
+      <div key={index}>
+        <TextField required id="outlined-basic" label="Author(s)" key={index} />
+      </div>
+    )
+    
+  }
+
   return (
     <div>
       <AppBar />
       <Container>
         <div className={styles.boxTitle}>
-            <h1>
-              Submit paper
+          <h1>
+            Submit paper
             </h1>
         </div>
 
@@ -70,46 +100,49 @@ export default function SubmitPaper() {
             <h2>Paper information</h2>
             <div className={styles.sameLine}>
               <div>
-                  <TextField className={styles.flex} id="outlined-basic" label="Paper Name" />
+                <TextField required error={domain.length === 0 ? true : false} className={styles.flex} id="outlined-basic" label="Paper Name" helperText={domain.length === 0 ? "Required Field" : ""} onChange={handleDomainChange} />
+
                 <div className={styles.sameLine}>
                   <div className={styles.flexButtons}>
-                    <TextField id="outlined-basic" label="Author(s)"  />
-                    <IconButton onClick>
+
+                    {authorField()}
+
+                    <IconButton onClick={removeAuthorsField}>
                       <RemoveIcon />
                     </IconButton>
-                    <IconButton>
+                    <IconButton onClick={addAuthorsField}>
                       <AddIcon />
                     </IconButton>
                   </div>
-                  <TextField className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date"/>
+                  <TextField required className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date" />
                 </div>
                 <div className={styles.sameLine}>
-                  <TextField className={styles.flexLinks} id="outlined-basic" label="Paper Link" />
-                  <TextField className={styles.flexLinks} id="outlined-basic" label="Code Link" />
+                  <TextField required className={styles.flexLinks} id="outlined-basic" label="Paper Link" />
+                  <TextField required className={styles.flexLinks} id="outlined-basic" label="Code Link" />
                 </div>
                 <div>
                   {toggle('Domain', handleDomainChange, domain)}
                   {toggle('Dataset', handleDatasetChange, dataset)}
-                  <TextField className={styles.field} id="outlined-basic" label="Model Name"  />
+                  <TextField required className={styles.field} id="outlined-basic" label="Model Name" />
                 </div>
               </div>
               <div className={styles.boxOnRight}>
 
-                
+
               </div>
             </div>
           </div>
-      
+
           <div className={styles.section}>
             <h2>Accuracy information</h2>
             <div>
               <div>
                 {toggle('Accuracy Type', handleAccuracyTypeChange, accuracyType)}
-                <TextField className={styles.field} id="outlined-basic" label="Accuracy"  />
+                <TextField required className={styles.field} id="outlined-basic" label="Accuracy" />
               </div>
             </div>
           </div>
-          
+
           <div className={styles.section}>
             <h2>Hardware information</h2>
             <div className={styles.sameLine}>
@@ -118,9 +151,9 @@ export default function SubmitPaper() {
                 <div>
                   <div>
                     {toggle('CPU model', handleCpuModelChange, cpuModel)}
-                    <TextField className={styles.field} id="outlined-basic" label="# of CPU (s)"  />
+                    <TextField required className={styles.field} id="outlined-basic" label="# of CPU (s)" />
                   </div>
-                  <TextField className={styles.field} id="outlined-basic" label="CPU's Gflops (32fp)"  />
+                  <TextField required className={styles.field} id="outlined-basic" label="CPU's Gflops (32fp)" />
                 </div>
               </div>
 
@@ -129,21 +162,21 @@ export default function SubmitPaper() {
                 <div>
                   <div>
                     {toggle('GPU model', handleGpuModelChange, gpuModel)}
-                    <TextField className={styles.field} id="outlined-basic" label="# of GPU (s)"  />
+                    <TextField required className={styles.field} id="outlined-basic" label="# of GPU (s)" />
                   </div>
-                  <TextField className={styles.field} id="outlined-basic" label="GPU's Gflops (32fp)"  />
+                  <TextField required className={styles.field} id="outlined-basic" label="GPU's Gflops (32fp)" />
                 </div>
               </div>
             </div>
 
             <div>
-            <h4 className={styles.subsection}>TPU</h4>
+              <h4 className={styles.subsection}>TPU</h4>
               <div>
                 <div>
                   {toggle('TPU model', handleTpuModelChange, tpuModel)}
-                  <TextField className={styles.field} id="outlined-basic" label="# of TPU (s)"  />
+                  <TextField required className={styles.field} id="outlined-basic" label="# of TPU (s)" />
                 </div>
-                <TextField className={styles.field} id="outlined-basic" label="TPU's Gflops (32fp)"  />
+                <TextField required className={styles.field} id="outlined-basic" label="TPU's Gflops (32fp)" />
               </div>
             </div>
           </div>
@@ -152,13 +185,13 @@ export default function SubmitPaper() {
             <h2>Model's information</h2>
             <div>
               <div>
-                <TextField className={styles.field} id="outlined-basic" label="Training Time (s)"  />
-                <TextField className={styles.field} id="outlined-basic" label="Training Data Size"  />
+                <TextField required className={styles.field} id="outlined-basic" label="Training Time (s)" />
+                <TextField required className={styles.field} id="outlined-basic" label="Training Data Size" />
               </div>
-              <TextField className={styles.field} id="outlined-basic" label="# of Epochs"  />
-            </div>  
+              <TextField required className={styles.field} id="outlined-basic" label="# of Epochs" />
+            </div>
           </div>
-          
+
         </Paper>
         <div className={styles.buttons}>
           <Button className={styles.button} variant="contained">SUBMIT PAPER</Button>

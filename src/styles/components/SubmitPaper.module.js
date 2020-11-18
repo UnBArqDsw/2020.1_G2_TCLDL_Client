@@ -27,7 +27,7 @@ export default makeStyles((theme) => ({
   flexDate:{
     display: 'flex',
     flex: 0.3,
-    margin: 10,
+    margin: 10, 
   },
   flexLinks: {
     display: 'flex',
