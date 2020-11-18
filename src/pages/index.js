@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import Head from 'next/head';
+import Button from '@material-ui/core/Button';
 import styles from '../styles/Home.module.css';
 import AppBar from '../components/AppBar'
 import Tabs from '../components/Tabs'
@@ -20,6 +21,10 @@ import {
 export default function Home() {
   const [data, setData] = useState(imagenet)
   const [label, setLabel] = useState("TOP 1")
+  const [buttons, setButtons] = useState([{
+    label: 'Imaginet',
+    onPress: () => {}
+  }])
 
   const options = {
     series: [{
@@ -35,6 +40,10 @@ export default function Home() {
       onSelect: () => {
         setData(imagenet)
         setLabel("TOP 1")
+        setButtons([{
+          label: 'Imaginet',
+          onPress: () => {}
+        }])
       }
     },
     {
@@ -42,6 +51,10 @@ export default function Home() {
       onSelect: () => {
         setData(mscoco)
         setLabel("BOX AP")
+        setButtons([{
+          label: 'MSCOCO',
+          onPress: () => {}
+        }])
       }
     },
     {
@@ -49,6 +62,10 @@ export default function Home() {
       onSelect: () => {
         setData(squad1_1)
         setLabel("F1 score")
+        setButtons([{
+          label: 'SQUAD1',
+          onPress: () => {}
+        }])
       }
     },
     {
@@ -56,6 +73,10 @@ export default function Home() {
       onSelect: () => {
         setData(conll2003)
         setLabel("F1 score")
+        setButtons([{
+          label: 'Conll 2003',
+          onPress: () => {}
+        }])
       }
     },
     {
@@ -63,6 +84,21 @@ export default function Home() {
       onSelect: () => {
         setData(wmt2014_enfr)
         setLabel("BLEU")
+        setButtons([
+          {
+            label: 'WMT 2014 en-fr',
+            onPress: () => {
+              setData(wmt2014_enfr)
+              setLabel("BLEU")
+            }
+          }, {
+            label: 'WMT 2014 en-ge',
+            onPress: () => {
+              setData(wmt2014_enge)
+              setLabel("BLEU")
+            }
+          },
+      ])
       }
     },
   ]

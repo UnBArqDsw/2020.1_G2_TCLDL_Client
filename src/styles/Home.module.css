@@ -37,6 +37,13 @@
   justify-content: center;
 }
 
+.button {
+    background-color: '#312e36';
+    color: '#ffffff';
+    padding: 10;
+    align-self: 'center';
+}
+
 .domains h1 {
   color:#ffffff;
 }
