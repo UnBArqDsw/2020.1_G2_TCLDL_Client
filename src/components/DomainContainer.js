@@ -36,12 +36,12 @@ export default function DomainContainer() {
 
   return (
 
-      <Container style={{overflow: 'hidden'}}>
+      <Container >
         <div>
           <h1 style={{ fontFamily: 'Roboto', marginLeft: "200px"}}>Domain</h1>
         </div>
         <div className={classes.root} style={{marginLeft: "200px"}} >
-          <Grid container spacing={10}>
+          <Grid container spacing={8}>
             <Grid container item xs={3}>
               <Paper className={classes.paper}>
                 <Grid container wrap="nowrap" spacing={2}>
@@ -112,7 +112,7 @@ export default function DomainContainer() {
           </Grid>
         </div>
         <div className={classes.root} style={{ marginLeft: "200px", marginBottom: "100px" }}>
-          <Grid container spacing={10}>
+          <Grid container spacing={8}>
             <Grid container item xs={3}>
               <Paper className={classes.paper}>
                 <Grid container wrap="nowrap" spacing={2}>
