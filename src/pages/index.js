@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import AppBar from '../components/AppBar'
+import Tabs from '../components/Tabs'
 import Domain from '../components/Home/Domain'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
@@ -37,6 +38,7 @@ export default function Home() {
         <main className={styles.main}>
 
           <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
+          <Tabs />
           <button onClick={() => {
             setData(imagenet)
             setLabel("TOP 1")
