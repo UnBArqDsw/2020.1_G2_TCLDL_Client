@@ -7,39 +7,6 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-function TabPanel({ children, value, index, ...props }) {
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`wrapped-tabpanel-${index}`}
-      aria-labelledby={`wrapped-tab-${index}`}
-      {...props}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `wrapped-tab-${index}`,
-    'aria-controls': `wrapped-tabpanel-${index}`,
-  };
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -71,18 +38,7 @@ export default function TabsWrappedLabel({ tabs }) {
             {...a11yProps('one')}
           />
         ))}
-        {/* <Tab value="two" label="Item Two" {...a11yProps('two')} />
-        <Tab value="three" label="Item Three" {...a11yProps('three')} /> */}
       </Tabs>
-      <TabPanel value={value} index="one">
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index="two">
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index="three">
-        Item Three
-      </TabPanel>
     </div>
   );
 }
