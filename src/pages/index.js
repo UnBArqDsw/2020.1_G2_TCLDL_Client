@@ -113,42 +113,9 @@ export default function Home() {
 
           <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
           <Tabs tabs={tabs} />
-          <button onClick={() => {
-            setData(imagenet)
-            setLabel("TOP 1")
-          }}>
-            Imagenet
-          </button>
-          <button onClick={() => {
-            setData(mscoco)
-            setLabel("BOX AP")
-          }}>
-            MS COCO
-          </button>
-          <button onClick={() => {
-            setData(squad1_1)
-            setLabel("F1 score")
-          }}>
-            SQUAD 1.1
-          </button>
-          <button onClick={() => {
-            setData(conll2003)
-            setLabel("F1 score")
-          }}>
-            CoNLL 2003
-          </button>
-          <button onClick={() => {
-            setData(wmt2014_enfr)
-            setLabel("BLEU")
-          }}>
-            WMT 2014 (EN-FR)
-          </button>
-          <button onClick={() => {
-            setData(wmt2014_enge)
-            setLabel("BLEU")
-          }}>
-            WMT 2014 (EN-GE)
-          </button>
+          {buttons.map((value) => (
+            <Button onClick={value.onPress} className={styles.button} variant="contained">{value.label}</Button>
+          ))}
           <Chart data={data} label={label} />
           <div className={styles.domains}>
             
