@@ -10,11 +10,7 @@ import Box from '@material-ui/core/Box';
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    color: '#000000',
-    boxShadow: 0,
-    '& .MuiPaper-elevation4': {
-      boxShadow: 0
-    }
+    color: '#000000'
   },
 }));
 
@@ -35,7 +31,6 @@ export default function TabsWrappedLabel({ tabs }) {
             value={index}
             label={value.label}
             wrapped
-            {...a11yProps('one')}
           />
         ))}
       </Tabs>
