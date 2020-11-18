@@ -19,19 +19,42 @@ color: #121212;
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
+.buttonText1{
+    font-family: Roboto Mono;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 37px;
+letter-spacing: 0.23125px;
+color: #121212;
+}
+  .boxText {
+    display: flex; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 
 .root {
       flex-grow: 1; 
 }
 
 .text{
-    margin: 50px;
-    font-family: Roboto;
-    font-size: 18px;
+    font-family: Roboto Mono;
     font-style: normal;
-    font-weight: 300;
-    line-height: 24px;
-    letter-spacing: 0.15000000596046448px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 37px;
+    letter-spacing: 0.23125px;
+    color: #121212;
 
 }
+
+.paper{
+    padding: 20px;
+    text-align: center;
+}
+
+.large{
+    width: 90px;
+    height: 90px;
+  }
