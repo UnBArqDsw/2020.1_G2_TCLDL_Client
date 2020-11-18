@@ -1,31 +1,15 @@
-import React from "react";
-import { render } from "react-dom";
-import HighchartsReact from "highcharts-react-official";
-// Import Highcharts
+import React, { useState, useEffect } from "react";
 
+import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts/highcharts.src.js";
 import HighchartsExporting from "highcharts/modules/exporting";
 import regression from "regression";
-import imagenet from "./data/imagenet_data";
-import mscoco from "./data/mscoco_data";
-import squad1_1 from "./data/squad1_1_data";
-import conll2003 from "./data/conll2003_data";
-import wmt2014_enfr from "./data/wmt2014_en-fr_data";
-import wmt2014_enge from "./data/wmt2014_en-ge_data";
 
-export default class Chart extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      chartOptions: {}
-    };
-  }
-x
-  componentDidMount() {
-    this.generateChart(imagenet, "TOP 1");
-  }
+export default ({ data, label, isByYear}) => {
 
-  generateChart = (list, label) => {
+  const [chartOptions, setChartOptions] = useState({})
+
+  const generateChart = (list, label) => {
     let data_points = [];
     let info_points = [];
 
@@ -163,41 +147,23 @@ x
         }
       }
     };
-    this.setState({ chartOptions: chart });
+    setChartOptions(chart);
   };
 
-  render() {
-
-    if (typeof Highcharts === "object") {
-      HighchartsExporting(Highcharts);
-    }
-
-    return (
-      <div>
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={this.state.chartOptions}
-        />
-        <button onClick={() => this.generateChart(imagenet, "TOP 1")}>
-          Imagenet
-        </button>
-        <button onClick={() => this.generateChart(mscoco, "BOX AP")}>
-          MS COCO
-        </button>
-        <button onClick={() => this.generateChart(squad1_1, "F1 score")}>
-          SQUAD 1.1
-        </button>
-        <button onClick={() => this.generateChart(conll2003, "F1 score")}>
-          CoNLL 2003
-        </button>
-        <button onClick={() => this.generateChart(wmt2014_enfr, "BLEU")}>
-          WMT 2014 (EN-FR)
-        </button>
-        <button onClick={() => this.generateChart(wmt2014_enge, "BLEU")}>
-          WMT 2014 (EN-GE)
-        </button>
-      </div>
-    );
+  useEffect(() => {
+    generateChart(data, label);
+  }, [data, label])
+  if (typeof Highcharts === "object") {
+    HighchartsExporting(Highcharts);
   }
+
+  return (
+    <div>
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={chartOptions}
+      />
+    </div>
+  );
 }
 
