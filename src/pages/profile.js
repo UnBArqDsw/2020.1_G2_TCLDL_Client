@@ -7,7 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import { NaturePeopleOutlined } from '@material-ui/icons';
-export default function SubmitPaper() {
+import Link from 'next/link'
+export default function Profile() {
     const style = useStyles();
     const [editProfile, setEditProfile] = React.useState(true);
 
@@ -15,6 +16,7 @@ export default function SubmitPaper() {
         <>
             <div className={style.root}>
                 <Paper elevation={3} className={style.paper}>
+
                     <div className={style.avatarFile} >
                         <Avatar className={style.sizeLarge} alt="Remy Sharp" src="" />
                     </div>
@@ -26,9 +28,8 @@ export default function SubmitPaper() {
                             <TextField fullWidth id="outlined-basic" label="Username" variant="outlined" /></div>
                         <div className={style.textFieldBox}>  <TextField fullWidth id="outlined-basic" label="Email" variant="outlined" /></div>
                         <div className={style.textFieldBox}> <TextField fullWidth id="outlined-basic" label="Location" variant="outlined" /></div>
-                        <div className={style.textFieldBox}><TextField fullWidth multiline
+                        <div className={style.textFieldBox}> <TextField fullWidth multiline
                             rows={5} id="outlined-basic" label="Bio" variant="outlined" /> </div>
-
                     </form>
 
                     <div className={style.buttonText2}>
@@ -91,17 +92,21 @@ export default function SubmitPaper() {
             <Container>
                 <Grid container spacing={10} >
                     <Grid item xs={12} sm={6}>
-                        <div style = {{paddingLeft:'20px'}}>
+                        <div style={{ paddingLeft: '20px' }}>
                             <div className={style.boxTitle}>
                                 <div className={style.titleText}>
                                     Profile
                             </div>
                             </div>
-                            <div >
-                                <Button className={style.buttonText1} >Submitions</Button>
+                            <div>
+                                <Link href="/submission-profile">
+                                    <Button className={style.buttonText1} >Submitions</Button>
+                                </Link>
                             </div>
                             <div >
-                                <Button className={style.buttonText1} >Review</Button>
+                                <Link href="/review-profile">
+                                    <Button className={style.buttonText1} >Review</Button>
+                                </Link>
                             </div>
                             {editProfile ? null : <div className={style.text}>
                                 Update your profile to make the most of your experience using TLCDL.
@@ -111,13 +116,9 @@ export default function SubmitPaper() {
                                 </div>
                             </div>}
                         </div>
-
-
-
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         {editProfile ? viewProfile() : handleEditProfile()}
-
                     </Grid>
                 </Grid>
             </Container>
