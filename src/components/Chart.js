@@ -4,8 +4,16 @@ import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts/highcharts.src.js";
 import HighchartsExporting from "highcharts/modules/exporting";
 import regression from "regression";
+import { makeStyles } from '@material-ui/core/styles';
 
-export default ({ data, label, isByYear}) => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginLeft: -40
+  },
+}));
+
+const chart = ({ data, label, isByYear }) => {
+  const styles = useStyles()
 
   const [chartOptions, setChartOptions] = useState({})
 
@@ -160,12 +168,12 @@ export default ({ data, label, isByYear}) => {
   }
 
   return (
-    <div>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={chartOptions}
-      />
-    </div>
+    <HighchartsReact
+      highcharts={Highcharts}
+      options={chartOptions}
+      containerProps={{ className: styles.root }}
+    />
   );
 }
+export default chart;
 
