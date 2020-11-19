@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 import { NaturePeopleOutlined } from '@material-ui/icons';
 export default function SubmitPaper() {
     const style = useStyles();
-    const [editProfile, setEditProfile] = React.useState(false);
+    const [editProfile, setEditProfile] = React.useState(true);
 
     const handleEditProfile = () => (
         <>
@@ -48,25 +48,25 @@ export default function SubmitPaper() {
                     <div className={style.buttonText1}>
                         Username
                     </div>
-                    <div style={{padding:'10px'}} >
+                    <div style={{ padding: '10px' }} >
                         Username
                     </div>
                     <div className={style.buttonText1}>
                         Email
                     </div>
-                    <div style={{padding:'10px'}}>
+                    <div style={{ padding: '10px' }}>
                         email@hotmail.com
                     </div>
                     <div className={style.buttonText1}>
                         Location
                     </div>
-                    <div style={{padding:'10px'}} >
+                    <div style={{ padding: '10px' }} >
                         Cambrige,Massachusette
                     </div>
                     <div className={style.buttonText1}>
                         Bio
                     </div>
-                    <div style={{padding:'10px'}}>
+                    <div style={{ padding: '10px' }}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </div>
                     <div className={style.buttonText2}>
@@ -91,25 +91,26 @@ export default function SubmitPaper() {
             <Container>
                 <Grid container spacing={10} >
                     <Grid item xs={12} sm={6}>
-                        <div className={style.boxTitle}>
-                            <div className={style.titleText}>
-                                Profile
+                        <div style = {{paddingLeft:'20px'}}>
+                            <div className={style.boxTitle}>
+                                <div className={style.titleText}>
+                                    Profile
                             </div>
-                        </div>
-                        <div >
-                            <Button className={style.buttonText1} >Submitions</Button>
-                        </div>
-                        <div >
-                            <Button className={style.buttonText1} >Review</Button>
-                        </div>
-                        {editProfile ? <div className={style.text}>
-                            Update your profile to make the most of your experience using TLCDL.
-                            Adding a photo and some data about yourself will help to get to know you better.
+                            </div>
+                            <div >
+                                <Button className={style.buttonText1} >Submitions</Button>
+                            </div>
+                            <div >
+                                <Button className={style.buttonText1} >Review</Button>
+                            </div>
+                            {editProfile ? null : <div className={style.text}>
+                                Update your profile to make the most of your experience using TLCDL.
+                                Adding a photo and some data about yourself will help to get to know you better.
                             <div style={{ paddingTop: '10px' }}>
-                                <Button size="small" variant="contained" color="primary" >Request Subadmin Privileges</Button>
-                            </div>
-                        </div> : null}
-
+                                    <Button size="small" variant="contained" color="primary" >Request Subadmin Privileges</Button>
+                                </div>
+                            </div>}
+                        </div>
 
 
 
