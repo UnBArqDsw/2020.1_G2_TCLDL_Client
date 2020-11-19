@@ -4,29 +4,8 @@ export default makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 2,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
+    display: 'none'
   },
   mainIcon: {
     width: 70,
@@ -36,10 +15,25 @@ export default makeStyles((theme) => ({
     background: '#312e36'
   },
   signIn: {
-    color: '#ffffff'
+    color: '#ffffff',
+    marginRight: '30px'
   },
   signUp: {
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    marginRight: '9px'
+  },
+  aboutIcon: {
+    color: '#ffffff',
+    marginLeft: '30px'
+  },
+  domainsIcon: {
+    color: '#ffffff',
+    marginLeft: '30px'
+  },
+  submitPaperIcon: {
+    color: '#ffffff',
+    marginLeft: '30px',
+    backgroundColor: '#312e36'
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
