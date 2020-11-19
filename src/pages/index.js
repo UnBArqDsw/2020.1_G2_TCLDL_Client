@@ -23,17 +23,9 @@ export default function Home() {
   const [data, setData] = useState(imagenet)
   const [label, setLabel] = useState("TOP 1")
   const [buttons, setButtons] = useState([{
-    label: 'Imaginet',
+    label: 'Imagenet',
     onPress: () => {}
   }])
-
-  const options = {
-    series: [{
-      data: [1, 2, 3]
-    }, {
-      data: [4, 5, 6]
-    }]
-  }
 
   const tabs = [
     {
@@ -42,7 +34,7 @@ export default function Home() {
         setData(imagenet)
         setLabel("TOP 1")
         setButtons([{
-          label: 'Imaginet',
+          label: 'Imagenet',
           onPress: () => {}
         }])
       }
@@ -114,49 +106,44 @@ export default function Home() {
 
         <main className={styles.main}>
 
-          <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
           <div className={styles.charts}>
-            <Tabs tabs={tabs} />
+            <img src="/tcldlLogo.jpg" className={styles.tcldlLogo} alt="tcldl_logo" />
+            <div className={styles.menuTabs}>
+              <Tabs tabs={tabs} />
+            </div>
             <div>
-              {buttons.map((value) => (
-                <Button onClick={value.onPress} className={stylesJS.button} variant="contained">{value.label}</Button>
+              {buttons.map((value, index) => (
+                <Button onClick={value.onPress} key ={index} className={stylesJS.button} variant="contained">{value.label}</Button>
               ))}
             </div>
-          </div>
-          <div className={styles.chart}>
             <Chart data={data} label={label} />
           </div>
           <div className={styles.domains}>
             
             <h1 className={styles.title}>
-              Domains
+              DOMAINS
             </h1>
-          <div className={styles.domainsList}>
-            <Domain name="Image Classification" description="2123 Papers | 1 Benchmark" />
-            <Domain name="Object Detection" description="2123 Papers | 1 Benchmark" />
-            <Domain name="Named Entity Recognition" description="2123 Papers | 2 Benchmarks" />
-          </div>
-          <div className={styles.domainsList}>
-            <Domain name="Machine Translation" description="2123 Papers | 1 Benchmarks" />
-            <Domain name="Question Answering" description="2123 Papers | 1 Benchmarks" />
-          </div>
+            <div className={styles.domainsList}>
+              <Domain className={styles.domainsBoard} name="IMAGE CLASSIFICATION" description="13 Papers | 1 Benchmark" />
+              <Domain className={styles.domainsBoard} name="OBJECT DETECTION" description="33 Papers | 1 Benchmark" />
+              <Domain className={styles.domainsBoard} name="QUESTION ANSWERING" description="16 Papers | 1 Benchmark" />
+              <Domain className={styles.domainsBoard} name="NAMED ENTITY RECOGNITION" description="13 Papers | 1 Benchmark" />
+              <Domain className={styles.domainsBoard} name="MACHINE TRANSLATION" description="26 Papers | 2 Benchmarks" />
+            </div>
 
-            
           </div>
 
           <div className={styles.logo}>
             <div>
-              <h2> Developed by</h2>
+              <h1 className={styles.titleDevelopers}> DEVELOPED BY</h1>
+              <div className={styles.sameLine}>
+                <img src="/unbLogo.jpg" className={styles.smallIcon} alt="unb_logo" />
+                <img src="/mitLogo.jpg" className={styles.mitLogo} alt="mit_logo" />
+                <img src="/yonseiLogo.jpg" className={styles.smallIcon} alt="yonsei_logo" />
+              </div>
             </div>
             <img src="/ibmLogo.jpg" className={styles.ibmLogo} alt="ibm_logo" />
             <div>
-              <div className={styles.ibmLogoDiv}>
-              </div>
-              <div className={styles.sameLine}>
-                <img src="/unbLogo.jpg" className={styles.smalIcon} alt="unb_logo" />
-                <img src="/mitLogo.jpg" className={styles.mitLogo} alt="mit_logo" />
-                <img src="/yonseiLogo.jpg" className={styles.smalIcon} alt="yonsei_logo" />
-              </div>
             </div>
           </div>
 
