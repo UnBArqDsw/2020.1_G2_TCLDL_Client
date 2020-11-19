@@ -21,7 +21,7 @@ export default makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
-    marginLeft: 0,
+    marginLeft: 2,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
@@ -33,7 +33,7 @@ export default makeStyles((theme) => ({
     height: 'auto'
   },
   appBar: {
-    backgroundColor: '#312e36'
+    background: '#312e36'
   },
   signIn: {
     color: '#ffffff'

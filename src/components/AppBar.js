@@ -19,7 +19,12 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
-export default function PrimarySearchAppBar() {
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as userAction } from '../store/reducer';
+import MenuListComposition from './ProfileMenu';
+
+const PrimarySearchAppBar = ({ user }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -107,26 +112,25 @@ export default function PrimarySearchAppBar() {
         <Toolbar>
           <img src="/mainIcon.png" className={classes.mainIcon} alt="logo" />
           <div className={classes.grow} />
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
+
           <div className={classes.sectionDesktop}>
-            <Link href="/login">
-              <Button className={classes.signIn}>SIGN IN</Button>
-            </Link>
-            <Link href="/create-account">
-              <Button className={classes.signUp} variant="contained">SIGN UP</Button>
-            </Link>
+            {user ? (
+              <>
+                <Link href="/submit-paper">
+                  <Button className={classes.signUp} variant="contained">SUBMIT PAPER</Button>
+                </Link>
+                <MenuListComposition />
+              </>
+            ) : (
+              <>
+                <Link href="/login">
+                  <Button className={classes.signIn}>SIGN IN</Button>
+                </Link>
+                <Link href="/create-account">
+                  <Button className={classes.signUp} variant="contained">SIGN UP</Button>
+                </Link>
+              </>
+            )}
           </div>
         </Toolbar>
       </AppBar>
@@ -135,3 +139,12 @@ export default function PrimarySearchAppBar() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(userAction, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(PrimarySearchAppBar);

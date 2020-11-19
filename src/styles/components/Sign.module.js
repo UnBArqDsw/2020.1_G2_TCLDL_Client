@@ -13,9 +13,7 @@ export default makeStyles((theme) => ({
     margin: 20
   },
   box: {
-    padding: 10,
-    paddingLeft: 100,
-    paddingRight: 100,
+    padding: 100,
     marginTop: 20,
     display: 'flex',
     justifyContent: 'center',
@@ -33,6 +31,6 @@ export default makeStyles((theme) => ({
     padding: 20
   },
   right: {
-    marginLeft: 20
+    marginLeft: 21
   },
 }));

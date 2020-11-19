@@ -1,0 +1,31 @@
+.domain {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 30px 15px;
+  margin: 60px 30px 0; 
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: black;
+  width: 220px;
+  height: 150px;
+}
+
+.domain h4 {
+  font-size: 20px;
+  width: 180px;
+  text-align: center;
+  margin: 0;
+}
+
+.domain p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.domain:hover {
+  background-color: #ffffffbd;
+  cursor: pointer;
+}
