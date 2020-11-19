@@ -62,7 +62,7 @@ export default function DomainContainer() {
                     <ButtonBase className={classes.image}>
                       <img src="/machine.png" alt="logo" />
                     </ButtonBase>
-                    <Typography>2 Benchmarks</Typography>
+                    <Typography style={{ fontFamily: "Roboto Mono" }}>2 Benchmarks</Typography>
                   </Grid>
                 </Grid>
               </Paper>
@@ -117,7 +117,7 @@ export default function DomainContainer() {
         </div>
         <div className={classes.root} style={{ marginLeft: "200px", marginBottom: "100px" }}>
           <Grid container spacing={8}>
-            <Grid container item xs={3}>
+            <Grid container item xs={3} style={{ marginLeft: "150px"}}>
               <Paper className={classes.paper}>
                 <Grid container wrap="nowrap" spacing={2}>
                   <Grid
@@ -155,29 +155,6 @@ export default function DomainContainer() {
                     </Typography>
                     <ButtonBase className={classes.image}>
                       <img src="/object.png" alt="logo" />
-                    </ButtonBase>
-                    <Typography style={{ fontFamily: "Roboto Mono" }}>
-                      2 Benchmarks
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Paper>
-            </Grid>
-            <Grid container item xs={3}>
-              <Paper className={classes.paper}>
-                <Grid container wrap="nowrap" spacing={2}>
-                  <Grid
-                    item
-                    container
-                    direction="row"
-                    justify="center"
-                    alignItems="center"
-                  >
-                    <Typography style={{ fontFamily: "Roboto Mono" }}>
-                      Speech Recognition
-                    </Typography>
-                    <ButtonBase className={classes.image}>
-                      <img src="/preview.png" alt="logo" />
                     </ButtonBase>
                     <Typography style={{ fontFamily: "Roboto Mono" }}>
                       2 Benchmarks
