@@ -32,6 +32,7 @@ export default makeStyles((theme) => ({
     },
 
     buttonText2: {
+        padding:'20px',
         /* Button */
         fontFamily: 'Roboto',
         fontStyle: 'normal',
@@ -61,6 +62,7 @@ export default makeStyles((theme) => ({
 
     text: {
         padding: '20px',
+        marginTop: '60px',
         fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontWeight: 300,
@@ -68,6 +70,7 @@ export default makeStyles((theme) => ({
         lineHeight: '24px',
         letterSpacing: '0.15px',
         color: '#121212',
+        textAlign:'center',
 
     },
 
@@ -78,12 +81,25 @@ export default makeStyles((theme) => ({
 
     textFieldBox: {
         padding: '10px',
+        marginRight:'50px',
+        marginLeft:'50px',
     },
 
     sizeLarge: {
         alignSelf: 'center',
-        width: '90px',
-        height: '90px',
+        width: '120px',
+        height: '120px',
+    },
+
+    avatarFile: {
+        padding: '20px',
+        justifyContent:'center',
+        display:'flex',
+    },
+
+    fildSize:{
+        width:'70px',
+        height:'70px',
     }
 
 }));
