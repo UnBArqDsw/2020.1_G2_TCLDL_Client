@@ -6,7 +6,7 @@ import useStyles from '../styles/Profile.module.js';
 import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
-import { NaturePeopleOutlined } from '@material-ui/icons';
+import { BorderRight, NaturePeopleOutlined } from '@material-ui/icons';
 import Link from 'next/link'
 export default function Profile() {
     const style = useStyles();
@@ -93,20 +93,22 @@ export default function Profile() {
                 <Grid container spacing={10} >
                     <Grid item xs={12} sm={6}>
                         <div style={{ paddingLeft: '20px' }}>
-                            <div className={style.boxTitle}>
-                                <div className={style.titleText}>
-                                    Profile
+                            <div style={{ borderRight: '1px solid #eaeaea' }}>
+                                <div className={style.boxTitle}>
+                                    <div className={style.titleText}>
+                                        Profile
                             </div>
-                            </div>
-                            <div>
-                                <Link href="/submission-profile">
-                                    <Button className={style.buttonText1} >Submitions</Button>
-                                </Link>
-                            </div>
-                            <div >
-                                <Link href="/review-profile">
-                                    <Button className={style.buttonText1} >Review</Button>
-                                </Link>
+                                </div>
+                                <div>
+                                    <Link href="/submission-profile">
+                                        <Button className={style.buttonText1} >Submitions</Button>
+                                    </Link>
+                                </div>
+                                <div >
+                                    <Link href="/review-profile">
+                                        <Button className={style.buttonText1} >Review</Button>
+                                    </Link>
+                                </div>
                             </div>
                             {editProfile ? null : <div className={style.text}>
                                 Update your profile to make the most of your experience using TLCDL.
