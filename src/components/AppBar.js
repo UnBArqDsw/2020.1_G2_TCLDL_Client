@@ -112,19 +112,6 @@ const PrimarySearchAppBar = ({ user }) => {
         <Toolbar>
           <img src="/mainIcon.png" className={classes.mainIcon} alt="logo" />
           <div className={classes.grow} />
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
 
           <div className={classes.sectionDesktop}>
             {user ? (
