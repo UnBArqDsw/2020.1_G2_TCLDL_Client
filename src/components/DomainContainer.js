@@ -1,7 +1,6 @@
 // Imports
 import React from "react";
 import { Container } from "@material-ui/core";
-import AppBar from "../components/AppBar";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -36,14 +35,12 @@ export default function DomainContainer() {
   return (
     <Container>
       <div>
-        <h1 style={{ fontFamily: "Roboto", marginLeft: "200px" }}>Domain</h1>
+        <h1 style={{ marginLeft: "200px", marginTop: "50px"}}>Domain</h1>
       </div>
       <div>
         <p
           style={{
-            fontFamily: "Roboto",
-            marginLeft: "200px",
-            marginTop: "50px",
+            marginLeft: "200px"
           }}
         >
           06 domains available
