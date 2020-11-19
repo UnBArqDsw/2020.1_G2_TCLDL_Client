@@ -6,6 +6,7 @@ import useStyles from '../styles/Profile.module.js';
 import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
+import { NaturePeopleOutlined } from '@material-ui/icons';
 export default function SubmitPaper() {
     const style = useStyles();
     const [editProfile, setEditProfile] = React.useState(false);
@@ -40,29 +41,32 @@ export default function SubmitPaper() {
     const viewProfile = () => (
         <>
             <div className={style.root}>
-                <Paper elevation={3} className={style.paper}>
+                <Paper elevation={3} className={style.paper2}>
                     <div className={style.avatarFile} >
                         <Avatar className={style.sizeLarge} alt="Remy Sharp" src="" />
                     </div>
-                    <div >
+                    <div className={style.buttonText1}>
                         Username
                     </div>
-                    <div>
+                    <div style={{padding:'10px'}} >
                         Username
                     </div>
-                    <div >
+                    <div className={style.buttonText1}>
                         Email
                     </div>
-                    <div>
+                    <div style={{padding:'10px'}}>
                         email@hotmail.com
                     </div>
-                    <div >
+                    <div className={style.buttonText1}>
+                        Location
+                    </div>
+                    <div style={{padding:'10px'}} >
                         Cambrige,Massachusette
                     </div>
-                    <div>
+                    <div className={style.buttonText1}>
                         Bio
                     </div>
-                    <div>
+                    <div style={{padding:'10px'}}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </div>
                     <div className={style.buttonText2}>
@@ -98,13 +102,14 @@ export default function SubmitPaper() {
                         <div >
                             <Button className={style.buttonText1} >Review</Button>
                         </div>
-                        <div className={style.text}>
+                        {editProfile ? <div className={style.text}>
                             Update your profile to make the most of your experience using TLCDL.
                             Adding a photo and some data about yourself will help to get to know you better.
                             <div style={{ paddingTop: '10px' }}>
                                 <Button size="small" variant="contained" color="primary" >Request Subadmin Privileges</Button>
                             </div>
-                        </div>
+                        </div> : null}
+
 
 
 

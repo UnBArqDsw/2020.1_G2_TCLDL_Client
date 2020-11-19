@@ -33,6 +33,7 @@ export default makeStyles((theme) => ({
 
     buttonText2: {
         padding:'20px',
+        textAlign:'center',
         /* Button */
         fontFamily: 'Roboto',
         fontStyle: 'normal',
@@ -77,6 +78,11 @@ export default makeStyles((theme) => ({
     paper: {
         padding: '20px',
         textAlign: 'center',
+    },
+
+    paper2: {
+        padding: '20px',
+        textAlign: 'left',
     },
 
     textFieldBox: {
