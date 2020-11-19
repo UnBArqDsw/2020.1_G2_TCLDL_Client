@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
+import { withRouter } from 'next/router'
 import Button from '@material-ui/core/Button';
 
 import styles from '../../styles/Domain.module.css';
 import useStyles from '../../styles/Domain.module';
-import Tabs from '../../components/Tabs'
-import Chart from '../../components/Chart'
 import Accordion from '../../components/Domain/Accordion'
 
 import {
@@ -17,121 +15,89 @@ import {
   wmt2014_enge
 } from '../../components/data'
 
-export default function Home() {
-  const [data, setData] = useState(imagenet)
-  const [label, setLabel] = useState("TOP 1")
+const Domain = ({ router }) => {
+  const [domain, setDomain] = useState(0)
+  const [name, setName] = useState('')
+  const [list, setList] = useState([])
+
   const [buttons, setButtons] = useState([{
     label: 'Imagenet',
     onPress: () => {}
   }])
   const [expanded, setExpanded] = useState(false);
 
+  useEffect(() => {
+    console.log('router', router.query)
+    if (router && router.query && router.query.domain) {
+      setDomain(router.query.domain)
+    }
+  }, [])
+
+  useEffect(() => {
+    switch (domain) {
+      case "1":
+        setList([
+          {
+            label: 'Imagenet',
+            data: imagenet,
+            chartLabel: 'TOP 1'
+          }
+        ])
+        setName('IMAGE CLASSIFICATION')
+        break;
+      case "2":
+        setList([
+          {
+            label: 'MSCOCO',
+            data: mscoco,
+            chartLabel: 'BOX AP'
+          }
+        ])
+        setName('OBJECT DETECTION')
+        break;
+      case "3":
+        setList([
+          {
+            label: 'SQUAD 1.1',
+            data: squad1_1,
+            chartLabel: 'F1 score'
+          }
+        ])
+        setName('QUESTION ANSWERING')
+        break;
+      case "4":
+        setList([
+          {
+            label: 'Conll 2003',
+            data: conll2003,
+            chartLabel: 'F1 score'
+          }
+        ])
+        setName('NAMED ENTITY')
+        break;
+      case "5":
+        setList([
+          {
+            label: 'WMT 2014 en-fr',
+            data: wmt2014_enfr,
+            chartLabel: 'BLEU'
+          },
+          {
+            label: 'WMT 2014 en-ge',
+            data: wmt2014_enge,
+            chartLabel: 'BLEU'
+          }
+        ])
+        setName('MACHINE TRANSLATION')
+        break;
+      default:
+        break;
+    }
+  }, [domain])
+
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-
-  const AccordionItems = [
-    {
-      label: 'Imagenet',
-      data: imagenet,
-      chartLabel: 'TOP 1'
-    },
-    {
-      label: 'MSCOCO',
-      data: mscoco,
-      chartLabel: 'BOX AP'
-    },
-    {
-      label: 'SQUAD 1.1',
-      data: squad1_1,
-      chartLabel: 'F1 score'
-    },
-    {
-      label: 'Conll 2003',
-      data: conll2003,
-      chartLabel: 'F1 score'
-    },
-    {
-      label: 'WMT 2014 en-fr',
-      data: wmt2014_enfr,
-      chartLabel: 'BLEU'
-    },
-    {
-      label: 'WMT 2014 en-ge',
-      data: wmt2014_enge,
-      chartLabel: 'BLEU'
-    }
-  ]
-
-  const tabs = [
-    {
-      label: 'Image Classification',
-      onSelect: () => {
-        setData(imagenet)
-        setLabel("TOP 1")
-        setButtons([{
-          label: 'Imagenet',
-          onPress: () => {}
-        }])
-      }
-    },
-    {
-      label: 'Object Detection',
-      onSelect: () => {
-        setData(mscoco)
-        setLabel("BOX AP")
-        setButtons([{
-          label: 'MSCOCO',
-          onPress: () => {}
-        }])
-      }
-    },
-    {
-      label: 'Question Answering',
-      onSelect: () => {
-        setData(squad1_1)
-        setLabel("F1 score")
-        setButtons([{
-          label: 'SQUAD 1.1',
-          onPress: () => {}
-        }])
-      }
-    },
-    {
-      label: 'Named Entity Recognition',
-      onSelect: () => {
-        setData(conll2003)
-        setLabel("F1 score")
-        setButtons([{
-          label: 'Conll 2003',
-          onPress: () => {}
-        }])
-      }
-    },
-    {
-      label: 'Machine Translation',
-      onSelect: () => {
-        setData(wmt2014_enfr)
-        setLabel("BLEU")
-        setButtons([
-          {
-            label: 'WMT 2014 en-fr',
-            onPress: () => {
-              setData(wmt2014_enfr)
-              setLabel("BLEU")
-            }
-          }, {
-            label: 'WMT 2014 en-ge',
-            onPress: () => {
-              setData(wmt2014_enge)
-              setLabel("BLEU")
-            }
-          },
-      ])
-      }
-    },
-  ]
-
 
   const stylesJS = useStyles();
   return (
@@ -139,9 +105,15 @@ export default function Home() {
       <div className={styles.container}>
 
         <main className={styles.main}>
-
           <div className={styles.charts}>
-            <Accordion list={AccordionItems} />
+            <div>
+              <div>
+                <h1>{name}</h1>
+                <p>Home > {name}</p>
+              </div>
+            </div>
+            <p>Dataset</p>
+            <Accordion list={list} />
           </div>
           <div className={styles.logo}>
             <div>
@@ -162,3 +134,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default withRouter(Domain)
