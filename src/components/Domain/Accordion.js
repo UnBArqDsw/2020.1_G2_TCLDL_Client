@@ -33,7 +33,6 @@ export default function ControlledAccordions({ list }) {
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
-    setType(0)
   };
 
   const tabs = [
@@ -51,11 +50,7 @@ export default function ControlledAccordions({ list }) {
     <div className={classes.root}>
       {list.map((value, index) => (
         <Accordion expanded={expanded === index} onChange={handleChange(index)}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.heading}>{value.label}</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -63,7 +58,7 @@ export default function ControlledAccordions({ list }) {
             <div className={styles.menuTabs}>
               <Tabs tabs={tabs} />
             </div>
-            <Chart data={value.data} label={value.chartLabel} />
+            <Chart data={value.data} label={value.chartLabel} isByYear={type} />
             <Table />
           </div>
           </AccordionDetails>
