@@ -45,8 +45,7 @@ const Home = ({ user, setUser }) => {
   }
 
   return (
-    <div>  
-      <AppBar />
+    <div>
       <SignComponent>
         <form className={styles.form}>
           <TextField onChange={event => setEmail(event.target.value)} className={styles.field} id="filled-basic" label="Email" />

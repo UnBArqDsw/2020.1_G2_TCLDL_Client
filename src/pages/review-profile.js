@@ -13,7 +13,6 @@ export default function ReviewProfile() {
     const style = useStyles();
     return (
         <div>
-            <AppBar />
             <Container>
                 <Grid container spacing={10} >
                     <Grid item xs={12} sm={3}>
@@ -36,7 +35,7 @@ export default function ReviewProfile() {
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={9}>
-                        <Table/>
+                        <Table />
                     </Grid>
                 </Grid>
             </Container>

@@ -12,7 +12,6 @@ export default function Home() {
 
   return (  
     <div>
-      <AppBar />
       <SignComponent>
         <form className={styles.form} noValidate autoComplete="off">
           <TextField className={styles.field} id="standard-basic" label="Username" />

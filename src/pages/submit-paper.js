@@ -102,7 +102,6 @@ export default function SubmitPaper() {
 
   return (
     <div>
-      <AppBar />
       <Container>
         <div className={styles.boxTitle}>
           <h1>

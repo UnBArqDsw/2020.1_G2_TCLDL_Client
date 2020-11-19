@@ -100,8 +100,6 @@ export default function Home() {
   const stylesJS = useStyles();
   return (
     <div>
-      <AppBar />
-
       <div className={styles.container}>
 
         <main className={styles.main}>
