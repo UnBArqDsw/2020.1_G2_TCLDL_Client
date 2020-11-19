@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head';
+
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import useStyles from '../styles/components/CreateAccount.module';
-
 import AppBar from '../components/AppBar'
 import SignComponent from '../components/Sign'
 
@@ -20,9 +21,9 @@ const Home = ({ user, setUser }) => {
   const [emailError, setEmailError] = useState('')
   const [password, setPassword] = useState('')
   const [passwordError, setPasswordError] = useState('')
+  const router = useRouter()
 
   const handleLogin = () => {
-    console.log(email, password)
     if (!email) {
       setEmailError(true)
     } else {
@@ -42,6 +43,7 @@ const Home = ({ user, setUser }) => {
       email,
       name: 'José Manso'
     })
+    router.push('/')
   }
 
   return (
