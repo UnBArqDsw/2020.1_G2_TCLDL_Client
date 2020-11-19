@@ -14,6 +14,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-bottom: 60px;
 }
 
 .footer {
@@ -31,7 +32,7 @@
   align-self: stretch;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 60px 0px;
   flex-direction: column;
 }
 
@@ -43,6 +44,10 @@
   justify-content: center;
 }
 
+.domainBoard {
+  font-size: 90px;
+}
+
 .button {
   background-color: '#312e36';
   color: '#ffffff';
@@ -51,11 +56,20 @@
 }
 
 .charts {
-  margin: 20px;
+  margin: 60px auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  max-width: 1300px;
+  width: 100%;
+
+}
+
+.menuTabs {
+  width: 100%;
+
+  border-bottom: 1px solid #333;
 }
 
 .domains h1 {
@@ -64,15 +78,15 @@
 
 .tcldlLogo {
   display: flex;
-  width: auto;
-  height: 150px;
+  width: 100%;
+  height: auto;
   justify-content: center;
   align-self: center;
-  margin: 20px;
+  margin-bottom: 60px;
 }
 
 .logo {
-  margin: 200px 0px;
+  margin: 60px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,35 +95,36 @@
 
 .ibmLogo {
   align-self: center;
-  width: 250px;
+  width: 32%;
   height: auto;
-  margin-top: 50px;
+  margin: 40px;
 }
 
 
 .mitLogo {
-  width: 210px;
+  width: 25%;
   height: auto;
-  margin: 50px 20px 0px;
 }
 
 .mainIcon {
-  width: 250px;
+  width: 20%;
   height: auto;
   margin: 10px 20px;
 }
 
-.smalIcon {
-  width: 130px;
+.smallIcon {
+  width: 13%;
   height: auto;
-  margin: 0px 35px 0px;
 }
 
 .sameLine {
-  display: 'flex';
-  flex-direction: 'row';
-  align-items: flex-start;
-  justify-content: flex-start;
+  display: flex;
+  width: 90%;
+  max-width: 1300px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px auto;
 }
 
 .sameColumn {
@@ -132,6 +147,10 @@
   text-decoration: none;
 }
 
+.devTitle {
+  margin-top: 30px;
+}
+
 .title a:hover,
 .title a:focus,
 .title a:active {
@@ -140,13 +159,21 @@
 
 .title {
   margin: 0;
-  line-height: 1.15;
+  line-height: 0.8;
+  font-size: 48px;
+}
+.titleDevelopers {
+  margin: 0;
+  line-height: 0.8;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 60px;
+
 }
 
 .title,
 .description {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .description {
@@ -201,10 +228,6 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
 }
 
 @media (max-width: 600px) {
