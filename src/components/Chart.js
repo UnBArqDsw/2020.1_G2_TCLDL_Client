@@ -24,7 +24,7 @@ const chart = ({ data, label, isByYear }) => {
     for (let index = 0; index < list.length; index++) {
       const element = list[index];
       let x, y;
-      x = Math.log10(element.hardware_burden);
+      x = isByYear ? element.year : Math.log10(element.hardware_burden);
       y = 1 / (1 - element.accuracy);
 
       const point = [x, y];
@@ -72,7 +72,7 @@ const chart = ({ data, label, isByYear }) => {
               let y = (1 - 1 / this.y) * 100;
               y = Math.round(y * 100) / 100;
               let x = Math.round(this.x * 100) / 100;
-              return `${label}: ${y}% - Computation: 10e+${x} `;
+              return `${label}: ${y}% - ${isByYear ? `Year: ${x}` : `Computation: 10e+${x}`} `;
             }
           }
         },
@@ -87,7 +87,7 @@ const chart = ({ data, label, isByYear }) => {
           type: "line",
           showInLegend: true,
           name: result.string
-            .replace("x", " log(Computation)")
+            .replace("x", isByYear ? " Year" : " log(Computation)")
             .replace("+ -", " - ")
             .replace("y", "1 / Error"),
           data: [result.points[0], result.points[result.points.length - 1]],
@@ -129,7 +129,7 @@ const chart = ({ data, label, isByYear }) => {
             fontSize: 13
           },
           formatter: function () {
-            return "10e+" + this.value;
+            return isByYear ? this.value : "10e+" + this.value;
           }
         }
       },
@@ -160,7 +160,7 @@ const chart = ({ data, label, isByYear }) => {
 
   useEffect(() => {
     generateChart(data, label);
-  }, [data, label])
+  }, [data, label, isByYear])
 
 
   if (typeof Highcharts === "object") {
