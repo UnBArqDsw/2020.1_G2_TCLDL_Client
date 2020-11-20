@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import styles from '../../styles/Domain.module.css';
 import useStyles from '../../styles/Domain.module';
 import Accordion from '../../components/Domain/Accordion'
+import Link from 'next/link'
 
 import {
   imagenet,
@@ -83,12 +84,12 @@ const Domain = ({ router }) => {
       case "5":
         setList([
           {
-            label: 'WMT 2014 en-fr',
+            label: 'WMT 2014 EN-FR',
             data: wmt2014_enfr,
             chartLabel: 'BLEU'
           },
           {
-            label: 'WMT 2014 en-ge',
+            label: 'WMT 2014 EN-GE',
             data: wmt2014_enge,
             chartLabel: 'BLEU'
           }
@@ -115,7 +116,11 @@ const Domain = ({ router }) => {
             <div className={styles.domainTitle}>
               <div>
                 <h1>{name}</h1>
-                <p>Home > {name}</p>
+                <p>
+                <Link href="/domains">
+                  <Button className={stylesJS.aboutIcon}>Domains</Button>
+                </Link> 
+                  > {name}</p>
               </div>
             </div>
             <p>{description}</p>

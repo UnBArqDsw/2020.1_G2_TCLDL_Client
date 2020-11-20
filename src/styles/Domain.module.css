@@ -26,6 +26,10 @@
   align-items: center;
 }
 
+.path {
+  display: flex;
+}
+
 .domains {
   background-color: #312E36;
   display: flex;

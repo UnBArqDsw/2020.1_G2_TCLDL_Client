@@ -82,13 +82,13 @@ export default function Home() {
         setLabel("BLEU")
         setButtons([
           {
-            label: 'WMT 2014 en-fr',
+            label: 'WMT 2014 EN-FR',
             onPress: () => {
               setData(wmt2014_enfr)
               setLabel("BLEU")
             }
           }, {
-            label: 'WMT 2014 en-ge',
+            label: 'WMT 2014 EN-GE',
             onPress: () => {
               setData(wmt2014_enge)
               setLabel("BLEU")
