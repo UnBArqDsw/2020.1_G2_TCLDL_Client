@@ -33,7 +33,7 @@ export default function Profile() {
                     </form>
 
                     <div className={style.buttonText2}>
-                        <Button className={style.buttonText2} size="large" variant="contained" color="primary" onClick={submitProfile} >Update Profile</Button>
+                        <Button className={style.updateButton} size="large" variant="contained" onClick={submitProfile} >Update Profile</Button>
                     </div>
                 </Paper>
             </div>
@@ -71,7 +71,7 @@ export default function Profile() {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </div>
                     <div className={style.buttonText2}>
-                        <Button className={style.editButton} size="large" variant="contained" color="primary" onClick={onClickEditProfile} >Edit Profile</Button>
+                        <Button className={style.editButton} size="large" variant="contained" onClick={onClickEditProfile} >Edit Profile</Button>
                     </div>
                 </Paper>
             </div>
@@ -112,8 +112,8 @@ export default function Profile() {
                             {editProfile ? null : <div className={style.text}>
                                 Update your profile to make the most of your experience using TLCDL.
                                 Adding a photo and some data about yourself will help to get to know you better.
-                            <div style={{ paddingTop: '10px' }}>
-                                    <Button size="small" variant="contained" color="primary" >Request Subadmin Privileges</Button>
+                            <div>
+                                    <Button className={style.subadminButton} size="small" variant="contained" >Request Subadmin Privileges</Button>
                                 </div>
                             </div>}
                         </div>

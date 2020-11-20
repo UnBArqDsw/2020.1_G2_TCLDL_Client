@@ -55,6 +55,17 @@ export default makeStyles((theme) => ({
         color: '#ffffff',
     },
 
+    updateButton: {
+        backgroundColor: '#312e36',
+        color: '#ffffff',
+    },
+
+    subadminButton: {
+        backgroundColor: '#312e36',
+        color: '#ffffff',  
+        marginTop: '20px',
+    },
+
     boxText: {
         display: 'flex',
         marginTop: '1px',
@@ -68,7 +79,7 @@ export default makeStyles((theme) => ({
 
     text: {
         padding: '20px',
-        marginTop: '60px',
+        marginTop: '100px',
         fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontWeight: 300,
