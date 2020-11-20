@@ -14,10 +14,16 @@ export default makeStyles((theme) => ({
         padding: 0,
     },
 
+    boxTitles: {
+        marginTop: '110px',
+        borderRight: "1px solid #eaeaea" 
+
+    },
+
     boxTitle: {
         display: 'flex',
         marginTop: '3rem',
-        marginBottom: '3rem',
+        marginBottom: '3rem'
     },
 
 
