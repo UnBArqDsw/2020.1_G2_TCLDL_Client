@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Button }  from '@material-ui/core';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -31,6 +32,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  button: {
+    display: 'flex',
+    alignSelf: 'flex-end',
+    backgroundColor: '#312e36',
+    color: '#ffffff',
+    padding: 10,
+  }
 }));
 
 export default function ControlledAccordions({ list }) {
@@ -67,6 +75,7 @@ export default function ControlledAccordions({ list }) {
             </div>
             <Chart data={value.data} label={value.chartLabel} isByYear={type} />
             <Table rows={value.data} />
+            <Button className={classes.button}>Download Data</Button>
           </div>
           </AccordionDetails>
         </Accordion>
