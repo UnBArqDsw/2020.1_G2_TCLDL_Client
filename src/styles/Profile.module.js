@@ -14,12 +14,18 @@ export default makeStyles((theme) => ({
         padding: 0,
     },
 
-    boxTitles: {
+    boxTitlesSubmissions: {
         marginTop: '110px',
         borderRight: "1px solid #eaeaea" 
 
     },
 
+    boxTitlesReview: {
+        marginTop: '70px',
+        borderRight: "1px solid #eaeaea" 
+
+    },
+    
     boxTitle: {
         display: 'flex',
         marginTop: '3rem',

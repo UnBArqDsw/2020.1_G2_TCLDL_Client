@@ -18,7 +18,7 @@ export default function SubmissionProfile() {
       <Container>
         <Grid container spacing={10}>
           <Grid sm={3}>
-            <div className={style.boxTitles}>
+            <div className={style.boxTitlesSubmissions}>
               <div className={style.boxTitle}>
                 <div className={style.titleText}>Submissions</div>
               </div>
