@@ -114,7 +114,7 @@ const chart = ({ data, label, isByYear }) => {
       },
       xAxis: {
         title: {
-          text: "COMPUTATION (HARDWARE BURDEN)",
+          text: isByYear ? 'YEAR' : "COMPUTATION (HARDWARE BURDEN)",
           margin: 20,
           style: {
             color: "#333",
