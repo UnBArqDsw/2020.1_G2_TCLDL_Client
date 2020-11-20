@@ -67,7 +67,7 @@ export default function MenuListComposition() {
                     onClick={handleToggle}
                     endIcon={<AccountBoxIcon fontSize="large" />}
                 >
-                    USERNAME
+                    Admin
                 </Button>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (

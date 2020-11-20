@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
   container: {
     margin: '0px 20px',
     '&:hover': {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      filter: `opacity(0.8)`
     }
   },
   image: {

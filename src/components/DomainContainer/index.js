@@ -49,7 +49,7 @@ export default function DomainContainer() {
             marginLeft: "200px"
           }}
         >
-          06 domains available
+          05 domains available
         </p>
       </div>
       <hr
@@ -60,16 +60,16 @@ export default function DomainContainer() {
         style={{ marginBottom: "50px" }}
       ></hr>
       <div className={classes.root} style={{ margin: "20px" }}>
-          <Item link={{ pathname: '/domains/domain', query: { domain: 5 }}} name="Machine Translation" image="/machine.png" benchmarks="2 Benchmarks" />
-          <Item link={{ pathname: '/domains/domain', query: { domain: 1 }}} name="Image Classification" image="/classification.png" benchmarks="2 Benchmarks" />
-          <Item link={{ pathname: '/domains/domain', query: { domain: 3 }}} name="Qustion Answering" image="/question.png" benchmarks="2 Benchmarks" />
+          <Item link={{ pathname: '/domains/domain', query: { domain: 1 }}} name="Image Classification" image="/classification.png" benchmarks="1 Benchmark" />
+          <Item link={{ pathname: '/domains/domain', query: { domain: 2 }}} name="Object Detection" image="/object.png" benchmarks="1 Benchmark" />
+          <Item link={{ pathname: '/domains/domain', query: { domain: 3 }}} name="Qustion Answering" image="/question.png" benchmarks="1 Benchmark" />
       </div>
       <div
         className={classes.root}
         style={{ margin: 20 }}
         >
-          <Item link={{ pathname: '/domains/domain', query: { domain: 4 }}} name="Named Entity Recognition" image="/named.png" benchmarks="2 Benchmarks" />
-          <Item link={{ pathname: '/domains/domain', query: { domain: 2 }}} name="Object Detection" image="/object.png" benchmarks="2 Benchmarks" />
+          <Item link={{ pathname: '/domains/domain', query: { domain: 4 }}} name="Named Entity Recognition" image="/named.png" benchmarks="1 Benchmark" />
+          <Item link={{ pathname: '/domains/domain', query: { domain: 5 }}} name="Machine Translation" image="/machine.png" benchmarks="2 Benchmarks" />
       </div>
     </div>
   );
