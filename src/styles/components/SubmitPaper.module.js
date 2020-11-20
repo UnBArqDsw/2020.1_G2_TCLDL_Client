@@ -11,7 +11,8 @@ export default makeStyles((theme) => ({
     flex: 0.7,
     margin: '10px',
     flexDirection: 'row',
-    alignSelf: 'strech',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start'
   },
   flexDate:{
     display: 'flex',
@@ -22,6 +23,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flex: 0.5,
     margin: '10px',
+  },
+  authorField: {
+    minWidth: 500,
+    marginTop: 10
   },
   nameflex: {
     display: 'flex',
@@ -45,6 +50,11 @@ export default makeStyles((theme) => ({
   selectField: {
     margin: '10px',
     minWidth: 200,
+  },
+  authorButtons: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 10
   },
   buttons: {
     display: 'flex',
