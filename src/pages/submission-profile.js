@@ -17,12 +17,10 @@ export default function SubmissionProfile() {
     <div>
       <Container>
         <Grid container spacing={10}>
-          <Grid item xs={12} sm={3}>
-            <div
-              style={{ paddingLeft: "20px", borderRight: "1px solid #eaeaea" }}
-            >
+          <Grid sm={3}>
+            <div className={style.boxTitlesSubmissions}>
               <div className={style.boxTitle}>
-                <div className={style.titleText}>Submission</div>
+                <div className={style.titleText}>Submissions</div>
               </div>
               <div>
                 <Link href="/profile">

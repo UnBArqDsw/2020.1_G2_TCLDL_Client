@@ -15,8 +15,8 @@ export default function ReviewProfile() {
         <div>
             <Container>
                 <Grid container spacing={10} >
-                    <Grid item xs={12} sm={3}>
-                        <div style={{ paddingLeft: '20px', borderRight: '1px solid #eaeaea' }}>
+                    <Grid item sm={3}>
+                        <div className={style.boxTitlesReview}>
                             <div className={style.boxTitle}>
                                 <div className={style.titleText}>
                                     Review

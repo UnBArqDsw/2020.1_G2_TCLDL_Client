@@ -16,8 +16,8 @@ export default function Home() {
         <form className={styles.form} noValidate autoComplete="off">
           <TextField className={styles.field} id="standard-basic" label="Username" />
           <TextField className={styles.field} id="filled-basic" label="Email" />
-          <TextField className={styles.field} id="outlined-basic" label="Password" />
-          <TextField className={styles.field} id="outlined-basic" label="Confirm Password" />
+          <TextField type="password" className={styles.field} id="outlined-basic" label="Password" />
+          <TextField type="password" className={styles.field} id="outlined-basic" label="Confirm Password" />
 
           <Button className={styles.button} variant="contained">Create Account</Button>
         </form>
