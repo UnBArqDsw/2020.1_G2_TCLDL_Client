@@ -68,12 +68,21 @@
 
 .menuTabs {
   width: 100%;
-
   border-bottom: 1px solid #333;
+}
+
+.domainTitle {
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .domains h1 {
   color:#ffffff;
+}
+
+.datasetLabel {
+  font-weight: 900;
+  margin-top: 50px;
 }
 
 .tcldlLogo {
