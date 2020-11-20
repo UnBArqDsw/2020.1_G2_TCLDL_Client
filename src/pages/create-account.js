@@ -14,7 +14,8 @@ export default function Home() {
     <div>
       <SignComponent>
         <form className={styles.form} noValidate autoComplete="off">
-          <TextField className={styles.field} id="standard-basic" label="Username" />
+          <TextField className={styles.field} id="standard-basic" label="Name" />
+          <TextField className={styles.field} id="standard-basic" label="Last Name" />
           <TextField className={styles.field} id="filled-basic" label="Email" />
           <TextField type="password" className={styles.field} id="outlined-basic" label="Password" />
           <TextField type="password" className={styles.field} id="outlined-basic" label="Confirm Password" />
