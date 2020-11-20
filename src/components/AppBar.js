@@ -106,7 +106,11 @@ const PrimarySearchAppBar = ({ user }) => {
     <div className={classes.grow}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <img src="/mainIcon.png" className={classes.mainIcon} alt="logo" />
+          <Link href="/">
+            <a>
+              <img src="/mainIcon.png" className={classes.mainIcon} alt="logo" />
+            </a>
+          </Link>
           <Link href="/domains">
             <Button className={classes.domainsIcon}>DOMAINS</Button>
           </Link>
