@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 import Head from 'next/head';
+import { useRouter } from 'next/router'
+
 import Button from '@material-ui/core/Button';
 import styles from '../styles/Home.module.css';
 import useStyles from '../styles/Home.module';
@@ -20,6 +22,7 @@ import {
 } from '../components/data'
 
 export default function Home() {
+  const router = useRouter()
   const [data, setData] = useState(imagenet)
   const [label, setLabel] = useState("TOP 1")
   const [buttons, setButtons] = useState([{
@@ -122,11 +125,11 @@ export default function Home() {
               DOMAINS
             </h1>
             <div className={styles.domainsList}>
-              <Domain className={styles.domainsBoard} name="IMAGE CLASSIFICATION" description="13 Papers | 1 Benchmark" />
-              <Domain className={styles.domainsBoard} name="OBJECT DETECTION" description="33 Papers | 1 Benchmark" />
-              <Domain className={styles.domainsBoard} name="QUESTION ANSWERING" description="16 Papers | 1 Benchmark" />
-              <Domain className={styles.domainsBoard} name="NAMED ENTITY RECOGNITION" description="13 Papers | 1 Benchmark" />
-              <Domain className={styles.domainsBoard} name="MACHINE TRANSLATION" description="26 Papers | 2 Benchmarks" />
+              <Domain onClick={{ pathname: '/domains/domain', query: { domain: 1 }}} className={styles.domainsBoard} name="IMAGE CLASSIFICATION" description="13 Papers | 1 Benchmark" />
+              <Domain onClick={{ pathname: '/domains/domain', query: { domain: 2 }}} className={styles.domainsBoard} name="OBJECT DETECTION" description="33 Papers | 1 Benchmark" />
+              <Domain onClick={{ pathname: '/domains/domain', query: { domain: 3 }}} className={styles.domainsBoard} name="QUESTION ANSWERING" description="16 Papers | 1 Benchmark" />
+              <Domain onClick={{ pathname: '/domains/domain', query: { domain: 4 }}} clssName={styles.domainsBoard} name="NAMED ENTITY RECOGNITION" description="13 Papers | 1 Benchmark" />
+              <Domain onClick={{ pathname: '/domains/domain', query: { domain: 5 }}} className={styles.domainsBoard} name="MACHINE TRANSLATION" description="26 Papers | 2 Benchmarks" />
             </div>
 
           </div>
