@@ -10,6 +10,7 @@ import useStyles from '../styles/components/SubmitPaper.module';
 export default function SubmitPaper() {
   const styles = useStyles();
   const [domain, setDomain] = React.useState('');
+  const [submitted, setSubmitted] = React.useState(false);
   const [dataset, setDataset] = React.useState('');
   const [paperLink, setPaperLink] = React.useState('');
   const [codeLink, setCodeLink] = React.useState('');
@@ -89,13 +90,18 @@ export default function SubmitPaper() {
     }
   }
 
+
+  const onSubmit = () => {
+    setSubmitted(true)
+    console.log('Foi aqui')
+  }
+
   const authorField = () => {
     return  authorsField.map((el, index) => 
       <div key={index}>
         <TextField className={styles.authorField} required id="outlined-basic" label="Author(s)" />
       </div>
     )
-    
   }
 
   return (
@@ -112,7 +118,7 @@ export default function SubmitPaper() {
             <h2>Paper information</h2>
             <div className={styles.sameLine}>
               <div>
-                <TextField required error={domain.length === 0 ? true : false} className={styles.nameflex} id="outlined-basic" label="Paper Name" helperText={domain.length === 0 ? "Required Field" : ""} onChange={handleDomainChange} />
+                <TextField required error={submitted && !domain.length ? true : false} className={styles.nameflex} id="outlined-basic" label="Paper Name" helperText={submitted && !domain.length ? "Required Field" : ""} onChange={handleDomainChange} />
 
                 <div className={styles.sameLine}>
                   <div className={styles.flexButtons}>
@@ -130,16 +136,18 @@ export default function SubmitPaper() {
                       </IconButton>
                     </div>
                   </div>
-                  <TextField required error={dataset.length === 0 ? true : false} helperText={dataset.length === 0 ? "Required Field" : ""} className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date" onChange={handleDatasetChange} />
+
+                  {console.log(submitted)}
+                  <TextField required error={submitted && !dataset.length ? true : false} helperText={submitted && !dataset.length ? "Required Field" : ""} className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date" onChange={handleDatasetChange} />
                 </div>
                 <div className={styles.sameLine}>
-                  <TextField required error={paperLink.length === 0 ? true : false} helperText={paperLink.length === 0 ? "Required Field" : ""}  className={styles.flexLinks} id="outlined-basic" label="Paper Link" onChange={handlePapelLink}/>
-                  <TextField required error={codeLink.length === 0 ? true : false} helperText={codeLink.length === 0 ? "Required Field" : ""}  className={styles.flexLinks} id="outlined-basic" label="Code Link"onChange={handleCodeLink}/>
+                  <TextField required error={submitted && !paperLink.length ? true : false} helperText={submitted && !paperLink.length ? "Required Field" : ""}  className={styles.flexLinks} id="outlined-basic" label="Paper Link" onChange={handlePapelLink}/>
+                  <TextField required error={submitted && !codeLink.length ? true : false} helperText={submitted && !codeLink.length ? "Required Field" : ""}  className={styles.flexLinks} id="outlined-basic" label="Code Link"onChange={handleCodeLink}/>
                 </div>
                 <div>
                   {toggle('Domain', handleDomainChange, domain)}
                   {toggle('Dataset', handleDatasetChange, dataset)}
-                  <TextField required error={modelName.length === 0 ? true : false} helperText={modelName.length === 0 ? "Required Field" : ""} className={styles.field} id="outlined-basic" label="Model Name" onChange={handleModelName}/>
+                  <TextField required error={submitted && !modelName.length ? true : false} helperText={submitted && !modelName.length ? "Required Field" : ""} className={styles.field} id="outlined-basic" label="Model Name" onChange={handleModelName}/>
                 </div>
               </div>
             </div>
@@ -206,7 +214,7 @@ export default function SubmitPaper() {
 
         </Paper>
         <div className={styles.buttons}>
-          <Button className={styles.button} variant="contained">SUBMIT PAPER</Button>
+          <Button onClick={() => onSubmit()} className={styles.button} variant="contained">SUBMIT PAPER</Button>
           <Button className={styles.cancelButton}>Cancel</Button>
         </div>
       </Container>
