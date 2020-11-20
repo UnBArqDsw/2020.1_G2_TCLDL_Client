@@ -59,10 +59,10 @@ export default function AboutContainer() {
               size="large"
               borderRight="unset"
             >
+              <Button>Our Paper</Button>
               <Button>Our Mission</Button>
               <Button>Contributing</Button>
               <Button>including policy</Button>
-              <Button>download</Button>
             </ButtonGroup>
           </div>
         </Grid>
