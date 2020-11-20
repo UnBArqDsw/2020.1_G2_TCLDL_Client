@@ -96,13 +96,15 @@ export default function AboutContainer() {
         >
           TCLD is a platform for viewing paper data that addresses the
           computational limits of deep learning. Our inspiration for creating
-          this site was the paper The Computational Limits of Deep Learning
-          , where one of the group merbers Gabriel F. Manso, is one of the
-          authors of the paper. The platform was created in conjunction with
-          students and professors from YONSEI University, who validated our
-          product, and helped us to improve it. This platform is open source and
-          is open to contributions from new employees.
-          Paper Link is: <a href="https://arxiv.org/abs/2007.05558">The Computational Limits of Deep Learning</a>
+          this site was the paper The Computational Limits of Deep Learning ,
+          where one of the group merbers Gabriel F. Manso, is one of the authors
+          of the paper. The platform was created in conjunction with students
+          and professors from YONSEI University, who validated our product, and
+          helped us to improve it. This platform is open source and is open to
+          contributions from new employees. Paper Link is:{" "}
+          <a href="https://arxiv.org/abs/2007.05558">
+            The Computational Limits of Deep Learning
+          </a>
         </div>
         <h3
           style={{
@@ -121,14 +123,11 @@ export default function AboutContainer() {
             marginBottom: "30px",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec
-          ultrices tincidunt arcu non sodales neque sodales ut. Odio ut enim
-          blandit volutpat. Suspendisse faucibus interdum posuere lorem ipsum.
-          Risus commodo viverra maecenas accumsan lacus vel. Facilisi morbi
-          tempus iaculis urna id volutpat. Interdum velit euismod in
-          pellentesque massa placerat. A arcu cursus vitae congue mauris. Nisl
-          tincidunt eget nullam non nisi est sit amet.
+          Our mission is to make it easier to view paper data that deal with
+          Deep Learning, and concentrate that knowledge in a platform. In
+          addition, we also want to engage researchers in the field to put their
+          papers on our platform and also become contributors and reviewers of
+          papers to be submitted by other contributors.
         </div>
         <h3
           style={{
@@ -147,14 +146,17 @@ export default function AboutContainer() {
             marginBottom: "30px",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec
-          ultrices tincidunt arcu non sodales neque sodales ut. Odio ut enim
-          blandit volutpat. Suspendisse faucibus interdum posuere lorem ipsum.
-          Risus commodo viverra maecenas accumsan lacus vel. Facilisi morbi
-          tempus iaculis urna id volutpat. Interdum velit euismod in
-          pellentesque massa placerat. A arcu cursus vitae congue mauris. Nisl
-          tincidunt eget nullam non nisi est sit amet.
+          There are several ways to be a collaborator on our project, you can
+          contribute as a developer by solving implementation issues, in this
+          case just follow the contribution guide that is in our documentation.{" "}
+          <a href="https://unbarqdsw.github.io/2020.1_G2_TCLDL/contributing/">
+            Contribution guide link
+          </a>
+          You can also contribute by submitting new papers for our plataform,
+          for this you just need create an account on our platform and submit
+          the paper. Besides that you can still become an administrator, in
+          which case you will review the data of submitted papers and approve
+          them or in our platform.
         </div>
         <h3
           style={{
@@ -173,14 +175,11 @@ export default function AboutContainer() {
             marginBottom: "100px",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec
-          ultrices tincidunt arcu non sodales neque sodales ut. Odio ut enim
-          blandit volutpat. Suspendisse faucibus interdum posuere lorem ipsum.
-          Risus commodo viverra maecenas accumsan lacus vel. Facilisi morbi
-          tempus iaculis urna id volutpat. Interdum velit euismod in
-          pellentesque massa placerat. A arcu cursus vitae congue mauris. Nisl
-          tincidunt eget nullam non nisi est sit amet.
+          We believe that respect for diversity is one of the main pillars for
+          our platform to grow, and evolve, thus anyone is welcome to become a
+          contributor. We want to be an inclusive and diverse platform where
+          women, trans people and people with special needs feel welcomed, so no
+          form of discrimination or prejudice will be tolerated.
         </div>
       </div>
     </Container>
