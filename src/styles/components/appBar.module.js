@@ -16,7 +16,8 @@ export default makeStyles((theme) => ({
   },
   signIn: {
     color: '#ffffff',
-    marginRight: '30px'
+    marginRight: '30px',
+    '&:hover': { filter: `opacity(0.7)` }
   },
   signUp: {
     backgroundColor: '#ffffff',
@@ -24,16 +25,19 @@ export default makeStyles((theme) => ({
   },
   aboutIcon: {
     color: '#ffffff',
-    marginLeft: '30px'
+    marginLeft: '30px',
+    '&:hover': { filter: `opacity(0.7)` }
   },
   domainsIcon: {
     color: '#ffffff',
-    marginLeft: '30px'
+    marginLeft: '30px',
+    '&:hover': { filter: `opacity(0.7)` }
   },
   submitPaperIcon: {
     color: '#ffffff',
     marginLeft: '30px',
-    backgroundColor: '#312e36'
+    backgroundColor: '#312e36',
+    '&:hover': { filter: `opacity(0.7)` }
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
