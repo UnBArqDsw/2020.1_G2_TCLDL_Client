@@ -20,8 +20,8 @@ export default function Profile() {
                     <div className={style.avatarFile} >
                         <Avatar className={style.sizeLarge} alt="Remy Sharp" src="" />
                     </div>
-                    <div>
-                        Admin
+                    <div >
+                        Collaborator
                     </div>
                     <form noValidate autoComplete="off">
                         <div className={style.textFieldBox}>
@@ -33,7 +33,7 @@ export default function Profile() {
                     </form>
 
                     <div className={style.buttonText2}>
-                        <Button className={style.updateButton} size="large" variant="contained" onClick={submitProfile}>Update Profile</Button>
+                        <Button className={style.updateButton} size="large" variant="contained" onClick={submitProfile} >Update Profile</Button>
                     </div>
                 </Paper>
             </div>
@@ -109,6 +109,13 @@ export default function Profile() {
                                     </Link>
                                 </div>
                             </div>
+                            {editProfile ? null : <div className={style.text}>
+                                Update your profile to make the most of your experience using TLCDL.
+                                Adding a photo and some data about yourself will help to get to know you better.
+                            <div>
+                                    <Button className={style.subadminButton} size="small" variant="contained" >Request Subadmin Privileges</Button>
+                                </div>
+                            </div>}
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={6}>
