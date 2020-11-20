@@ -17,6 +17,7 @@ import {
 
 const Domain = ({ router }) => {
   const [domain, setDomain] = useState(0)
+  const [description, setDescription] = useState('')
   const [name, setName] = useState('')
   const [list, setList] = useState([])
 
@@ -44,6 +45,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('IMAGE CLASSIFICATION')
+        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
         break;
       case "2":
         setList([
@@ -54,6 +56,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('OBJECT DETECTION')
+        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
         break;
       case "3":
         setList([
@@ -64,6 +67,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('QUESTION ANSWERING')
+        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
         break;
       case "4":
         setList([
@@ -74,6 +78,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('NAMED ENTITY')
+        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
         break;
       case "5":
         setList([
@@ -89,6 +94,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('MACHINE TRANSLATION')
+        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
         break;
       default:
         break;
@@ -106,29 +112,16 @@ const Domain = ({ router }) => {
 
         <main className={styles.main}>
           <div className={styles.charts}>
-            <div>
+            <div className={styles.domainTitle}>
               <div>
                 <h1>{name}</h1>
                 <p>Home > {name}</p>
               </div>
             </div>
-            <p>Dataset</p>
+            <p>{description}</p>
+            <p className={styles.datasetLabel}>Dataset</p>
             <Accordion list={list} />
           </div>
-          <div className={styles.logo}>
-            <div>
-              <h1 className={styles.titleDevelopers}>DEVELOPED BY</h1>
-              <div className={styles.sameLine}>
-                <img src="/unbLogo.jpg" className={styles.smallIcon} alt="unb_logo" />
-                <img src="/mitLogo.jpg" className={styles.mitLogo} alt="mit_logo" />
-                <img src="/yonseiLogo.jpg" className={styles.smallIcon} alt="yonsei_logo" />
-              </div>
-            </div>
-            <img src="/ibmLogo.jpg" className={styles.ibmLogo} alt="ibm_logo" />
-            <div>
-            </div>
-          </div>
-
         </main>
       </div>
     </div>
