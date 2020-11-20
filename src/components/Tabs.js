@@ -22,11 +22,17 @@ const useStyles = makeStyles((theme) => ({
     width: 'auto',
     padding: '5px 20px',
     maxWidth: 210,
+  },
+  tabLabelSameLine: {
+    fontSize: '18px',
+    width: 'auto',
+    padding: '5px 20px',
+    maxWidth: 510,
   }
 
 }));
 
-export default function TabsWrappedLabel({ tabs }) {
+export default function TabsWrappedLabel({ tabs, sameLine }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -35,13 +41,15 @@ export default function TabsWrappedLabel({ tabs }) {
     tabs[newValue].onSelect()
   };
 
+  console.log('sameLine', sameLine)
+
   return (
     <div className={classes.tabsWrapper}>
       <Tabs value={value} scrollButtons="on" variant="scrollable" wrapped onChange={handleChange}>
         {tabs.map((value, index) => (
           <Tab
             key={index}
-            className={classes.tabLabel}
+            className={sameLine ? classes.tabLabelSameLine : classes.tabLabel}
             value={index}
             label={value.label}
             wrapped
