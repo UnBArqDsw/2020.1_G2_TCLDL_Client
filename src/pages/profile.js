@@ -71,7 +71,7 @@ export default function Profile() {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </div>
                     <div className={style.buttonText2}>
-                        <Button className={style.buttonText2} size="large" variant="contained" color="primary" onClick={onClickEditProfile} >Edit Profile</Button>
+                        <Button className={style.editButton} size="large" variant="contained" color="primary" onClick={onClickEditProfile} >Edit Profile</Button>
                     </div>
                 </Paper>
             </div>

@@ -50,6 +50,11 @@ export default makeStyles((theme) => ({
         color: '#FFFFFF',
     },
 
+    editButton: {
+        backgroundColor: '#312e36',
+        color: '#ffffff',
+    },
+
     boxText: {
         display: 'flex',
         marginTop: '1px',
