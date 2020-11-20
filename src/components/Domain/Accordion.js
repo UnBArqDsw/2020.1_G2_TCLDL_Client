@@ -5,7 +5,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Table from '../SubmissionTable'
+import Table from '../DomainTable'
 import Chart from '../Chart'
 import styles from '../../styles/Domain.module.css';
 import useDomainStyles from '../../styles/Domain.module';
@@ -66,7 +66,7 @@ export default function ControlledAccordions({ list }) {
               <Tabs tabs={tabs} sameLine />
             </div>
             <Chart data={value.data} label={value.chartLabel} isByYear={type} />
-            <Table />
+            <Table rows={value.data} />
           </div>
           </AccordionDetails>
         </Accordion>
