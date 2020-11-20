@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
-import { useRouter } from 'next/router'
-import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
 import useStyles from '../styles/components/CreateAccount.module';
-import AppBar from '../components/AppBar'
 import SignComponent from '../components/Sign'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as userAction } from '../store/reducer';
+import Axios from 'axios';
 
 const Home = ({ user, setUser }) => {
   const styles = useStyles();
@@ -39,11 +36,19 @@ const Home = ({ user, setUser }) => {
       return
     }
 
-    setUser({
-      email,
-      name: 'José Manso'
-    })
-    router.push('/')
+    Axios.post('http://localhost:3001/v0/login', { email, password })
+      .then(({ data: { token } }) => Axios.get('http://localhost:3001/v0/users', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then(({ data }) => {
+        setUser({
+          email: data.email,
+          name: [data.name, data.lastName].join('')
+        })
+
+        router.push('/')
+      }))
   }
 
   return (
