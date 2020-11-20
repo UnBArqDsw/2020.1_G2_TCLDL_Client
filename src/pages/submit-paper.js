@@ -18,7 +18,7 @@ export default function SubmitPaper() {
   const [cpuModel, setCpuModel] = React.useState('');
   const [gpuModel, setGpuModel] = React.useState('');
   const [tpuModel, setTpuModel] = React.useState('');
-  const authorsField = React.useRef([0]);
+  const [authorsField, setAuthorsField] = React.useState(['', '', '']);
   const [authors, setAuthors] = React.useState(['']);
   const [errorText, setErrorText] = React.useState('');
   const [text, setText] = React.useState('');
@@ -75,26 +75,24 @@ export default function SubmitPaper() {
   )
 
   const addAuthorsField = () => {
-    var newInput = authorsField.current.length;
-    let input = authorsField.current;
-    input.push(newInput);
-    authorsField.current = input;
-    console.log(input);
+    let input = authorsField
+    input.push('')
+    setAuthorsField([...input])
   }
 
 
   const removeAuthorsField = () => {
-    let input = authorsField.current;
-    if (authorsField.current.length != 1) {
+    let input = authorsField
+    if (input.length != 1) {
       input.pop();
-      authorsField.current = input;
+      setAuthorsField([...input])
     }
   }
 
   const authorField = () => {
-    return  authorsField.current.map ((el, index) => 
+    return  authorsField.map((el, index) => 
       <div key={index}>
-        <TextField required id="outlined-basic" label="Author(s)" />
+        <TextField className={styles.authorField} required id="outlined-basic" label="Author(s)" />
       </div>
     )
     
@@ -118,15 +116,19 @@ export default function SubmitPaper() {
 
                 <div className={styles.sameLine}>
                   <div className={styles.flexButtons}>
-
-                    {authorField()}
-
-                    <IconButton onClick={removeAuthorsField}>
-                      <RemoveIcon />
-                    </IconButton>
-                    <IconButton onClick={addAuthorsField}>
-                      <AddIcon />
-                    </IconButton>
+                    <div>
+                      {authorField()}
+                    </div>
+                    <div className={styles.authorButtons}>
+                      {authorsField.length === 1 ? null : (
+                        <IconButton onClick={removeAuthorsField}>
+                          <RemoveIcon />
+                        </IconButton>
+                      )}
+                      <IconButton onClick={addAuthorsField}>
+                        <AddIcon />
+                      </IconButton>
+                    </div>
                   </div>
                   <TextField required error={dataset.length === 0 ? true : false} helperText={dataset.length === 0 ? "Required Field" : ""} className={styles.flexDate} InputLabelProps={{ shrink: true }} id="outlined-basic" label="Release Date" type="date" onChange={handleDatasetChange} />
                 </div>
