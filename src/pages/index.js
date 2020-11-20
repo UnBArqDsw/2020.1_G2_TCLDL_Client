@@ -45,7 +45,7 @@ export default function Home() {
         setData(mscoco)
         setLabel("BOX AP")
         setButtons([{
-          label: 'MSCOCO',
+          label: 'MS COCO',
           onPress: () => {}
         }])
       }
@@ -54,7 +54,7 @@ export default function Home() {
       label: 'Question Answering',
       onSelect: () => {
         setData(squad1_1)
-        setLabel("F1 score")
+        setLabel("F1 SCORE")
         setButtons([{
           label: 'SQUAD 1.1',
           onPress: () => {}
@@ -65,7 +65,7 @@ export default function Home() {
       label: 'Named Entity Recognition',
       onSelect: () => {
         setData(conll2003)
-        setLabel("F1 score")
+        setLabel("F1 SCORE")
         setButtons([{
           label: 'Conll 2003',
           onPress: () => {}
@@ -100,8 +100,6 @@ export default function Home() {
   const stylesJS = useStyles();
   return (
     <div>
-      <AppBar />
-
       <div className={styles.container}>
 
         <main className={styles.main}>

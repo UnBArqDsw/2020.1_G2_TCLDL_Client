@@ -1,10 +1,10 @@
 import React from 'react';
-import AppBar from '../components/AppBar'
-import useStyles from '../styles/components/SubmitPaper.module';
+
 import { Container, TextField, Paper, Button, InputLabel, MenuItem, FormControl, Select, IconButton } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { error } from 'highcharts';
+import useStyles from '../styles/components/SubmitPaper.module';
 
 
 export default function SubmitPaper() {
@@ -94,7 +94,7 @@ export default function SubmitPaper() {
   const authorField = () => {
     return  authorsField.current.map ((el, index) => 
       <div key={index}>
-        <TextField required id="outlined-basic" label="Author(s)" key={index} />
+        <TextField required id="outlined-basic" label="Author(s)" />
       </div>
     )
     
@@ -102,7 +102,6 @@ export default function SubmitPaper() {
 
   return (
     <div>
-      <AppBar />
       <Container>
         <div className={styles.boxTitle}>
           <h1>
@@ -115,7 +114,7 @@ export default function SubmitPaper() {
             <h2>Paper information</h2>
             <div className={styles.sameLine}>
               <div>
-                <TextField required error={domain.length === 0 ? true : false} className={styles.flex} id="outlined-basic" label="Paper Name" helperText={domain.length === 0 ? "Required Field" : ""} onChange={handleDomainChange} />
+                <TextField required error={domain.length === 0 ? true : false} className={styles.nameflex} id="outlined-basic" label="Paper Name" helperText={domain.length === 0 ? "Required Field" : ""} onChange={handleDomainChange} />
 
                 <div className={styles.sameLine}>
                   <div className={styles.flexButtons}>
@@ -140,10 +139,6 @@ export default function SubmitPaper() {
                   {toggle('Dataset', handleDatasetChange, dataset)}
                   <TextField required error={modelName.length === 0 ? true : false} helperText={modelName.length === 0 ? "Required Field" : ""} className={styles.field} id="outlined-basic" label="Model Name" onChange={handleModelName}/>
                 </div>
-              </div>
-              <div className={styles.boxOnRight}>
-
-
               </div>
             </div>
           </div>

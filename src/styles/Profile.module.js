@@ -107,5 +107,4 @@ export default makeStyles((theme) => ({
         width:'70px',
         height:'70px',
     }
-
 }));

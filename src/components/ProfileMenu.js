@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         marginRight: theme.spacing(2),
     },
+    userIcon:{
+        color: '#ffffff',
+    }
 }));
 
 export default function MenuListComposition() {
@@ -58,13 +61,14 @@ export default function MenuListComposition() {
             <div>
                 <Button
                     ref={anchorRef}
+                    className={classes.userIcon}
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={handleToggle}
                     endIcon={<AccountBoxIcon fontSize="large" />}
                 >
-                    UserName
-        </Button>
+                    USERNAME
+                </Button>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
                         <Grow

@@ -15,7 +15,6 @@ export default function SubmissionProfile() {
 
   return (
     <div>
-      <AppBar />
       <Container>
         <Grid container spacing={10}>
           <Grid item xs={12} sm={3}>
