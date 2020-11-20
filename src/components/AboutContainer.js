@@ -45,12 +45,21 @@ export default function AboutContainer() {
           </div>
         </Grid>
 
-        <h1 style={{
-          marginTop: "50px",
-          marginLeft: "600px",
-        }}>About Us</h1>
+        <h1
+          style={{
+            marginTop: "50px",
+            marginLeft: "600px",
+          }}
+        >
+          About Us
+        </h1>
 
-        <Grid container item xs={10} style={{marginLeft: "500px", marginTop: "-90px"}}>
+        <Grid
+          container
+          item
+          xs={10}
+          style={{ marginLeft: "500px", marginTop: "-90px" }}
+        >
           <div className={classes.root}>
             <ButtonGroup
               variant="text"
@@ -85,8 +94,15 @@ export default function AboutContainer() {
             marginBottom: "30px",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod t
+          TCLD is a platform for viewing paper data that addresses the
+          computational limits of deep learning. Our inspiration for creating
+          this site was the paper The Computational Limits of Deep Learning
+          , where one of the group merbers Gabriel F. Manso, is one of the
+          authors of the paper. The platform was created in conjunction with
+          students and professors from YONSEI University, who validated our
+          product, and helped us to improve it. This platform is open source and
+          is open to contributions from new employees.
+          Paper Link is: <a href="https://arxiv.org/abs/2007.05558">The Computational Limits of Deep Learning</a>
         </div>
         <h3
           style={{
