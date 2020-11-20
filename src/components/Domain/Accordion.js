@@ -5,7 +5,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Table from '../Table'
+import Table from '../SubmissionTable'
 import Chart from '../Chart'
 import styles from '../../styles/Domain.module.css';
 import useDomainStyles from '../../styles/Domain.module';
@@ -18,7 +18,14 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: '33.33%',
-    flexShrink: 0,
+    flexShrink: 0
+  },
+  headerOpen: {
+    backgroundColor: '#312e36',
+    color: '#ffffff' 
+  },
+  header: {
+    backgroundColor: '#e0e0e1',
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
@@ -50,13 +57,13 @@ export default function ControlledAccordions({ list }) {
     <div className={classes.root}>
       {list.map((value, index) => (
         <Accordion expanded={expanded === index} onChange={handleChange(index)}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <AccordionSummary className={expanded === index ? classes.headerOpen : classes.header} IconButtonProps={{ className: expanded === index ? classes.headerOpen : classes.header }} expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.heading}>{value.label}</Typography>
           </AccordionSummary>
           <AccordionDetails>
           <div className={styles.charts}>
             <div className={styles.menuTabs}>
-              <Tabs tabs={tabs} />
+              <Tabs tabs={tabs} sameLine />
             </div>
             <Chart data={value.data} label={value.chartLabel} isByYear={type} />
             <Table />
