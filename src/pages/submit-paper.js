@@ -19,7 +19,7 @@ export default function SubmitPaper() {
   const [cpuModel, setCpuModel] = React.useState('');
   const [gpuModel, setGpuModel] = React.useState('');
   const [tpuModel, setTpuModel] = React.useState('');
-  const [authorsField, setAuthorsField] = React.useState(['', '', '']);
+  const [authorsField, setAuthorsField] = React.useState(['']);
   const [authors, setAuthors] = React.useState(['']);
   const [errorText, setErrorText] = React.useState('');
   const [text, setText] = React.useState('');
