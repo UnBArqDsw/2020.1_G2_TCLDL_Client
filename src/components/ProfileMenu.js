@@ -8,6 +8,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as userAction } from '../store/reducer';
+
 import Link from 'next/link'
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function MenuListComposition() {
+function MenuListComposition({ user }) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -67,7 +71,7 @@ export default function MenuListComposition() {
                     onClick={handleToggle}
                     endIcon={<AccountBoxIcon fontSize="large" />}
                 >
-                    Admin
+                   {user.name}
                 </Button>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
@@ -94,3 +98,11 @@ export default function MenuListComposition() {
         </div>
     );
 }
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators(userAction, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MenuListComposition);
