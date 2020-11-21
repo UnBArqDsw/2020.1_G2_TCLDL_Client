@@ -83,10 +83,14 @@ function MenuListComposition({ user }) {
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                                         <Link href="/profile">
-                                            <MenuItem >Profile</MenuItem>
+                                            <MenuItem onClick={handleClose}>Profile</MenuItem>
                                         </Link>
-
-                                        <MenuItem onClick={handleClose}>My account</MenuItem>
+                                        <Link href="/submission-profile">
+                                            <MenuItem onClick={handleClose}>Submissions</MenuItem>
+                                        </Link>
+                                        <Link href="/review-profile">
+                                            <MenuItem onClick={handleClose}>Review</MenuItem>
+                                        </Link>
                                         <MenuItem onClick={handleClose}>Logout</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
