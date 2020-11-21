@@ -7,10 +7,17 @@ import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import { BorderRight, NaturePeopleOutlined } from '@material-ui/icons';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as userAction } from '../store/reducer';
+
 import Link from 'next/link'
-export default function Profile() {
+function Profile({ user }) {
     const style = useStyles();
     const [editProfile, setEditProfile] = React.useState(true);
+    const [name, setName] = React.useState('');
+    const [lastName, setLastName] = React.useState('');
+    const [email, setEmail] = React.useState('');
 
     const handleEditProfile = () => (
         <>
@@ -25,7 +32,7 @@ export default function Profile() {
                     </div>
                     <form noValidate autoComplete="off">
                         <div className={style.textFieldBox}>
-                            <TextField fullWidth id="outlined-basic" label="Username" variant="outlined" /></div>
+                            <TextField fullWidth id="outlined-basic" label="Name" variant="outlined" /></div>
                         <div className={style.textFieldBox}>  <TextField fullWidth id="outlined-basic" label="Email" variant="outlined" /></div>
                         <div className={style.textFieldBox}> <TextField fullWidth id="outlined-basic" label="Location" variant="outlined" /></div>
                         <div className={style.textFieldBox}> <TextField fullWidth multiline
@@ -47,16 +54,16 @@ export default function Profile() {
                         <Avatar className={style.sizeLarge} alt="Remy Sharp" src="" />
                     </div>
                     <div className={style.buttonText1}>
-                        Username
+                        Name
                     </div>
                     <div style={{ padding: '10px' }} >
-                        Username
+                        {user ? user.name : 'Username'}
                     </div>
                     <div className={style.buttonText1}>
                         Email
                     </div>
                     <div style={{ padding: '10px' }}>
-                        email@hotmail.com
+                      {user ? user.email : 'email@hotmail.com'}
                     </div>
                     <div className={style.buttonText1}>
                         Location
@@ -119,3 +126,11 @@ export default function Profile() {
         </div>
     );
 }
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators(userAction, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
