@@ -10,7 +10,7 @@ import SignComponent from '../components/Sign'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as userAction } from '../store/reducer';
-import Axios from 'axios';
+import axios from 'axios';
 
 const Home = ({ user, setUser }) => {
   const styles = useStyles();
@@ -20,7 +20,7 @@ const Home = ({ user, setUser }) => {
   const [passwordError, setPasswordError] = useState('')
   const router = useRouter()
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!email) {
       setEmailError(true)
     } else {
@@ -36,19 +36,16 @@ const Home = ({ user, setUser }) => {
       return
     }
 
-    Axios.post('http://localhost:3001/v0/login', { email, password })
-      .then(({ data: { token } }) => Axios.get('http://localhost:3001/v0/users', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }).then(({ data }) => {
-        setUser({
-          email: data.email,
-          name: [data.name, data.lastName].join('')
-        })
-
-        router.push('/')
-      }))
+    const response = await axios.post('http://localhost:3001/v0/login', { email, password })
+    console.log(response)
+    const response2 = await axios.get('http://localhost:3001/v0/users/', {
+      headers: {
+        Authorization: `Bearer ${response.data.token}`
+      }
+    })
+    // console.log(response2)
+    setUser({ ...response.data, ...response2.data })
+    router.push('/')
   }
 
   return (
