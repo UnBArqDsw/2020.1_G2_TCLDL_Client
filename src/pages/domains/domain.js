@@ -46,7 +46,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('IMAGE CLASSIFICATION')
-        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
+        setDescription('Image classification is the primary domain, in which deep neural networks play the most important role of medical image analysis.')
         break;
       case "2":
         setList([
@@ -57,7 +57,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('OBJECT DETECTION')
-        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
+        setDescription('Object detection is a computer technology related to computer vision and image processing that deals with detecting instances of semantic objects of a certain class')
         break;
       case "3":
         setList([
@@ -68,7 +68,7 @@ const Domain = ({ router }) => {
           }
         ])
         setName('QUESTION ANSWERING')
-        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
+        setDescription('Question answering (QA) is a computer science discipline within the fields of information retrieval and natural language processing (NLP), which is concerned with building systems that automatically answer questions posed by humans in a natural language.')
         break;
       case "4":
         setList([
@@ -78,8 +78,8 @@ const Domain = ({ router }) => {
             chartLabel: 'F1 score'
           }
         ])
-        setName('NAMED ENTITY')
-        setDescription('Machine translation is the task of translating a sentence in a source language to a different target language.')
+        setName('NAMED ENTITY RECOGNITION')
+        setDescription('Named-entity recognition is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined categories')
         break;
       case "5":
         setList([
